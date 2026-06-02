@@ -5,6 +5,7 @@
  */
 
 import { animateHero } from "./animations/hero.js";
+import { initSkillsMarquee } from "./animations/skills.js";
 
 /* ── Section loader ───────────────────────────────────────────── */
 /**
@@ -19,7 +20,7 @@ async function loadSection(snippetPath, targetId) {
     return;
   }
   try {
-    const res  = await fetch(snippetPath);
+    const res = await fetch(snippetPath);
     if (!res.ok) throw new Error(`HTTP ${res.status} for ${snippetPath}`);
     const html = await res.text();
     target.innerHTML = html;
@@ -33,6 +34,7 @@ async function init() {
   // Load all sections in parallel
   await Promise.all([
     loadSection("sections/hero.html", "section-hero"),
+    loadSection("sections/skills.html", "section-skills"),
     // Future sections — uncomment and add as you build them:
     // loadSection("sections/projects.html", "section-projects"),
     // loadSection("sections/about.html",    "section-about"),
@@ -41,6 +43,7 @@ async function init() {
 
   // Kick off animations now that DOM is ready
   animateHero();
+  initSkillsMarquee();
 }
 
 document.addEventListener("DOMContentLoaded", init);
