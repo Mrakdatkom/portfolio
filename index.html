@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Personal portfolio — front-end developer & creative coder.">
+  <title>Dev Name — Portfolio</title>
+
+  <!-- Pixel font: Pixelify Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+  <!-- Compiled stylesheet (Tailwind v4 + all custom classes) -->
+  <link rel="stylesheet" href="styles/output.css">
+</head>
+<body>
+
+  <!-- Background texture layers (decorative, aria-hidden) -->
+  <div class="bg-dot-grid" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+
+  <!-- ─── Section mount points ────────────────────────────────── -->
+  <!-- Sections are loaded and injected here by main.js            -->
+
+  <main id="main-content">
+    <div id="section-hero"></div>
+
+    <!-- Future sections — add mount points as you build them -->
+    <!-- <div id="section-projects"></div> -->
+    <!-- <div id="section-about"></div>    -->
+    <!-- <div id="section-contact"></div>  -->
+  </main>
+
+  <!-- App entry — type="module" enables ES module imports -->
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
