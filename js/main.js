@@ -5,6 +5,7 @@
  */
 
 import { initAboutAnimation } from "./animations/about.js";
+import { initCertificationsAnimation } from "./animations/certifications.js";
 import { initEducationAnimation } from "./animations/education.js";
 import { animateHero } from "./animations/hero.js";
 import { initSkillsMarquee } from "./animations/skills.js";
@@ -41,6 +42,7 @@ async function init() {
     loadSection("sections/about.html", "section-about"),
     loadSection("sections/work.html", "section-work"),
     loadSection("sections/education.html", "section-education"),
+    loadSection("sections/certifications.html", "section-certifications"),
 
     // Future sections — uncomment and add as you build them:
     // loadSection("sections/projects.html", "section-projects"),
@@ -53,6 +55,7 @@ async function init() {
   initAboutAnimation();
   initWorkAnimation();
   initEducationAnimation();
+  initCertificationsAnimation();
 }
 
 document.addEventListener("DOMContentLoaded", init);
