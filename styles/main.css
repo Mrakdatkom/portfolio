@@ -43,14 +43,6 @@
 }
 
 /* ─── Base Reset ─────────────────────────────────────────────── */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 html {
   scroll-behavior: smooth;
 }
@@ -63,13 +55,19 @@ body {
   overflow-x: hidden;
 }
 
+#skills {
+  margin-top: 4rem;
+  /* equivalent to my-12 in Tailwind (3rem = 48px) */
+  margin-bottom: 4rem;
+}
+
 /* ─── Layout ─────────────────────────────────────────────────── */
 .portfolio-root {
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 3rem 2rem;
+  padding: 5rem 2rem 2rem;
 }
 
 .hero-wrapper {
