@@ -4,6 +4,7 @@
  * Add new sections here as the portfolio grows.
  */
 
+import { initAboutAnimation } from "./animations/about.js";
 import { animateHero } from "./animations/hero.js";
 import { initSkillsMarquee } from "./animations/skills.js";
 
@@ -35,15 +36,16 @@ async function init() {
   await Promise.all([
     loadSection("sections/hero.html", "section-hero"),
     loadSection("sections/skills.html", "section-skills"),
+    loadSection("sections/about.html", "section-about"),
     // Future sections — uncomment and add as you build them:
     // loadSection("sections/projects.html", "section-projects"),
-    // loadSection("sections/about.html",    "section-about"),
     // loadSection("sections/contact.html",  "section-contact"),
   ]);
 
   // Kick off animations now that DOM is ready
   animateHero();
   initSkillsMarquee();
+  initAboutAnimation();
 }
 
 document.addEventListener("DOMContentLoaded", init);
