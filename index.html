@@ -14,6 +14,10 @@
     href="https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Lora:ital,wght@0,400;0,500;1,400&display=swap"
     rel="stylesheet">
 
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollSmoother.min.js"></script>
+
   <!-- Compiled stylesheet (Tailwind v4 + all custom classes) -->
   <link rel="stylesheet" href="styles/output.css">
 </head>
@@ -27,20 +31,22 @@
   <!-- ─── Section mount points ────────────────────────────────── -->
   <!-- Sections are loaded and injected here by main.js            -->
 
-  <main id="main-content">
-    <div id="section-hero"></div>
-    <div id="section-skills"></div>
-    <div id="section-about"></div>
-    <div id="section-work"></div>
-    <div id="section-education"></div>
-    <div id="section-certifications"></div>
-    <div id="section-prof-dev"></div>
-    <div id="section-contact"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+      <div id="section-hero" data-speed="1"></div>
+      <div id="section-skills" data-speed="1"></div>
+      <div id="section-about" data-speed="1"></div>
+      <div id="section-work" data-speed="1"></div>
+      <div id="section-education" data-speed="1"></div>
+      <div id="section-certifications" data-speed="1"></div>
+      <div id="section-prof-dev" data-speed="1"></div>
+      <div id="section-contact" data-speed="1"></div>
 
-    <!-- Future sections — add mount points as you build them -->
-    <!-- <div id="section-projects"></div> -->
-    <!-- <div id="section-contact"></div>  -->
-  </main>
+      <!-- Future sections — add mount points as you build them -->
+      <!-- <div id="section-projects"></div> -->
+      <!-- <div id="section-contact"></div>  -->
+    </div>
+  </div>
 
   <!-- App entry — type="module" enables ES module imports -->
   <script type="module" src="js/main.js"></script>

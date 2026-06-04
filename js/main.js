@@ -13,6 +13,13 @@ import { initProfDevAnimation } from "./animations/profDev.js";
 import { initSkillsMarquee } from "./animations/skills.js";
 import { initWorkAnimation } from "./animations/work.js";
 
+import gsap from "../vendor/gsap/index.js";
+import { ScrollTrigger } from "../vendor/gsap/ScrollTrigger.js";
+import { ScrollSmoother } from "../vendor/gsap/ScrollSmoother.js";
+
+gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+
 /* ── Section loader ───────────────────────────────────────────── */
 /**
  * Fetches an HTML snippet and injects it into a target element.
@@ -52,6 +59,15 @@ async function init() {
     // loadSection("sections/projects.html", "section-projects"),
     // loadSection("sections/contact.html",  "section-contact"),
   ]);
+
+  // Initialize ScrollSmoother AFTER content is loaded
+  let smoother = ScrollSmoother.create({
+    wrapper: "#smooth-wrapper",
+    content: "#smooth-content",
+    smooth: 2,          // 1 second catch-up time – adjust to taste
+    effects: true,      // enables data-speed and data-lag attributes
+    // normalizeScroll: true  // prevents mobile address bar weirdness
+  });
 
   // Kick off animations now that DOM is ready
   animateHero();
