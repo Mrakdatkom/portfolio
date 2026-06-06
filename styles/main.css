@@ -10,6 +10,7 @@
   --color-border: #E5E7EB;
   --color-primary: #3B82F6;
   --color-primary-dark: #2563EB;
+  --color-footer: #F2F4F8;
   --radius-card: 0.75rem;
   --radius-badge: 0.25rem;
 }
@@ -32,7 +33,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-serif);
   font-weight: 600;
   letter-spacing: -0.02em;
@@ -43,6 +49,7 @@ a {
   color: var(--color-primary);
   transition: color 0.2s ease;
 }
+
 a:hover {
   color: var(--color-primary-dark);
 }

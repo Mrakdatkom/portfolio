@@ -64,6 +64,8 @@ async function init() {
     effects: true,
   });
 
+  gsap.set("#cert-modal", { clearProps: "all" });
+
   // Kick off animations now that DOM is ready
   animateHero();
   initSkillsMarquee();

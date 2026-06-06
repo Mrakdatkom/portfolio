@@ -29,7 +29,7 @@ export function initWorkAnimation() {
   );
 
   // Timeline dot pop
-  tl.fromTo("#work-entry-1 .rotate-45.bg-terracotta",
+  tl.fromTo("#work-entry-1 .rotate-45.bg-primary",
     { opacity: 0, scale: 0 },
     { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" },
     "-=0.4"

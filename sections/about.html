@@ -1,10 +1,10 @@
-<hr class="w-24 h-1 bg-charcoal/40 border-0 rounded mx-auto">
-<section class="w-full px-6 py-16 md:py-24 bg-parchment/30" id="about">
+<section id="about" class="w-full px-6 py-16 md:py-24 bg-background">
   <div class="max-w-5xl mx-auto">
 
     <!-- Section header -->
     <div class="text-center mb-14">
-      <h2 class="font-['PT_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-terracotta pb-2">
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-foreground tracking-tight inline-block border-b-2 border-primary pb-2">
         About Me
       </h2>
     </div>
@@ -12,65 +12,30 @@
     <!-- Two-column layout -->
     <div class="flex flex-col md:flex-row gap-12 items-center">
 
-      <!-- Left: Decorative panel -->
+      <!-- Left: Decorative panel (kept for animation but restyled) -->
       <div class="w-full md:w-2/5 lg:w-1/3 flex justify-center">
-        <div class="relative w-64 h-72" id="about-deco">
-          <!-- Outer dashed frame -->
-          <div class="absolute inset-0 border border-dashed border-terracotta/50 rounded-sm"></div>
-          <!-- Inner frame -->
-          <div class="absolute inset-[10px] border border-terracotta/20 rounded-sm"></div>
-          <!-- Corner accents -->
-          <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-terracotta"></div>
-          <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-terracotta"></div>
-          <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-terracotta"></div>
-          <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-terracotta"></div>
-          <!-- SVG art -->
+        <div id="about-deco" class="relative w-64 h-72 bg-surface rounded-xl border border-border overflow-hidden">
+          <!-- Simple SVG art (replaces pixel graphics with subtle geometric pattern) -->
           <svg class="absolute inset-0 w-full h-full" viewBox="0 0 256 288" xmlns="http://www.w3.org/2000/svg">
             <defs>
               <pattern id="dotgrid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-                <circle cx="8" cy="8" r="1" fill="#C0654A" opacity="0.18" />
+                <circle cx="8" cy="8" r="1" fill="currentColor" opacity="0.08" />
               </pattern>
             </defs>
-            <rect x="16" y="16" width="224" height="256" fill="url(#dotgrid)" />
-            <!-- Scan lines -->
-            <line x1="16" y1="48" x2="240" y2="48" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
-            <line x1="16" y1="80" x2="240" y2="80" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
-            <line x1="16" y1="112" x2="240" y2="112" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
-            <line x1="16" y1="144" x2="240" y2="144" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
-            <line x1="16" y1="176" x2="240" y2="176" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
-            <line x1="16" y1="208" x2="240" y2="208" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
-            <line x1="16" y1="240" x2="240" y2="240" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
-            <!-- Outer orbit ring -->
-            <rect x="84" y="84" width="88" height="88" rx="2" fill="none" stroke="#C0654A" stroke-width="0.75"
+            <rect x="16" y="16" width="224" height="256" fill="url(#dotgrid)" class="text-primary" />
+            <!-- Central diamond -->
+            <rect x="102" y="102" width="52" height="52" rx="2" fill="none" class="stroke-primary" stroke-width="1.2"
+              opacity="0.5" transform="rotate(45 128 128)" />
+            <rect x="114" y="114" width="28" height="28" fill="currentColor" class="text-primary" opacity="0.12"
+              transform="rotate(45 128 128)" />
+            <circle cx="128" cy="128" r="4" fill="currentColor" class="text-primary" opacity="0.8" />
+            <!-- Orbit rings -->
+            <rect x="84" y="84" width="88" height="88" rx="2" fill="none" class="stroke-primary" stroke-width="0.8"
               opacity="0.2" transform="rotate(45 128 128)" />
-            <!-- Main diamond -->
-            <rect x="102" y="102" width="52" height="52" rx="2" fill="none" stroke="#C0654A" stroke-width="1.5"
-              opacity="0.55" transform="rotate(45 128 128)" />
-            <!-- Diamond fill -->
-            <rect x="114" y="114" width="28" height="28" fill="#C0654A" opacity="0.12" transform="rotate(45 128 128)" />
-            <!-- Center dot -->
-            <rect x="124" y="124" width="8" height="8" fill="#C0654A" opacity="0.65" transform="rotate(45 128 128)" />
-            <!-- Orbit dots -->
-            <circle cx="128" cy="84" r="2.5" fill="#C0654A" opacity="0.45" />
-            <circle cx="128" cy="172" r="2.5" fill="#C0654A" opacity="0.45" />
-            <circle cx="84" cy="128" r="2.5" fill="#C0654A" opacity="0.45" />
-            <circle cx="172" cy="128" r="2.5" fill="#C0654A" opacity="0.45" />
-            <!-- Corner diamonds -->
-            <rect x="40" y="40" width="9" height="9" fill="#C0654A" opacity="0.3" transform="rotate(45 44.5 44.5)" />
-            <rect x="207" y="40" width="9" height="9" fill="#C0654A" opacity="0.3" transform="rotate(45 211.5 44.5)" />
-            <rect x="40" y="239" width="9" height="9" fill="#C0654A" opacity="0.3" transform="rotate(45 44.5 243.5)" />
-            <rect x="207" y="239" width="9" height="9" fill="#C0654A" opacity="0.3"
-              transform="rotate(45 211.5 243.5)" />
-            <!-- Mid-axis small squares -->
-            <rect x="54" y="126" width="5" height="5" fill="#C0654A" opacity="0.22" />
-            <rect x="197" y="126" width="5" height="5" fill="#C0654A" opacity="0.22" />
-            <rect x="126" y="54" width="5" height="5" fill="#C0654A" opacity="0.22" />
-            <rect x="126" y="197" width="5" height="5" fill="#C0654A" opacity="0.22" />
           </svg>
-          <!-- Placeholder label -->
           <span
-            class="absolute bottom-5 left-0 right-0 text-center font-['Pixelify_Sans'] text-[10px] tracking-widest text-terracotta/40 uppercase">
-            [ portrait ]
+            class="absolute bottom-5 left-0 right-0 text-center font-mono text-[10px] tracking-wider text-muted uppercase">
+            — mark ryan —
           </span>
         </div>
       </div>
@@ -80,82 +45,58 @@
 
         <!-- Bio text -->
         <div class="space-y-4">
-          <p class="figtree-light text-charcoal-light leading-relaxed">
-            I'm a <span class="text-terracotta font-semibold">front-end developer &amp; creative coder</span>
-            with a passion for pixel&#8209;perfect design and buttery smooth animations. I believe
-            great code and great art are not mutually exclusive.
+          <p class="font-mono text-foreground leading-relaxed">
+            I'm a <span class="text-primary font-semibold">front-end developer &amp; creative coder</span>
+            with a passion for clean, responsive design and buttery smooth animations. I believe
+            great code and great user experience are inseparable.
           </p>
-          <!-- Pixel dot divider -->
-          <div class="flex items-center gap-1.5">
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta/30 rotate-45"></span>
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta/60 rotate-45"></span>
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta rotate-45"></span>
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta/60 rotate-45"></span>
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta/30 rotate-45"></span>
+          <!-- Subtle divider -->
+          <div class="flex items-center gap-2">
+            <span class="inline-block w-4 h-px bg-border"></span>
+            <span class="inline-block w-1.5 h-1.5 bg-primary rotate-45"></span>
+            <span class="inline-block w-4 h-px bg-border"></span>
           </div>
-          <p class="figtree-light text-charcoal-light leading-relaxed">
+          <p class="font-mono text-muted leading-relaxed">
             With over 4 years of experience, I've worked with startups and agencies to bring digital
-            products to life — my toolkit includes modern JavaScript, GSAP, Tailwind CSS, and a love
-            for retro aesthetics.
+            products to life — my toolkit includes modern JavaScript, GSAP, Tailwind CSS, Laravel, React,
+            and a love for elegant typography.
           </p>
         </div>
 
-        <!-- Stats grid -->
-        <div class="grid grid-cols-2 gap-3 pt-2">
-          <div
-            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
-            data-stat>
-            <div class="absolute inset-0 pointer-events-none"
-              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
-            </div>
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1" data-count="4">4+</div>
-            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Years Experience</div>
+        <!-- Stats grid (kept data-stat and data-count for counter animation) -->
+        <div class="grid grid-cols-2 gap-4 pt-2">
+          <div class="bg-surface border-l-4 border-primary pl-4 pr-3 py-3 rounded-md shadow-sm" data-stat>
+            <div class="font-mono text-3xl font-semibold text-primary leading-none mb-1" data-count="4">4+</div>
+            <div class="text-xs uppercase tracking-wider text-muted font-medium">Years Experience</div>
           </div>
-          <div
-            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
-            data-stat>
-            <div class="absolute inset-0 pointer-events-none"
-              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
-            </div>
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1" data-count="25">25+</div>
-            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Projects Completed</div>
+          <div class="bg-surface border-l-4 border-primary pl-4 pr-3 py-3 rounded-md shadow-sm" data-stat>
+            <div class="font-mono text-3xl font-semibold text-primary leading-none mb-1" data-count="25">25+</div>
+            <div class="text-xs uppercase tracking-wider text-muted font-medium">Projects Completed</div>
           </div>
-          <div
-            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
-            data-stat>
-            <div class="absolute inset-0 pointer-events-none"
-              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
-            </div>
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1" data-count="12">12+</div>
-            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Technologies</div>
+          <div class="bg-surface border-l-4 border-primary pl-4 pr-3 py-3 rounded-md shadow-sm" data-stat>
+            <div class="font-mono text-3xl font-semibold text-primary leading-none mb-1" data-count="12">12+</div>
+            <div class="text-xs uppercase tracking-wider text-muted font-medium">Technologies</div>
           </div>
-          <div
-            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
-            data-stat>
-            <div class="absolute inset-0 pointer-events-none"
-              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
-            </div>
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1">&#8734;</div>
-            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Coffee Cups</div>
+          <div class="bg-surface border-l-4 border-primary pl-4 pr-3 py-3 rounded-md shadow-sm" data-stat>
+            <div class="font-mono text-3xl font-semibold text-primary leading-none mb-1">∞</div>
+            <div class="text-xs uppercase tracking-wider text-muted font-medium">Coffee Cups</div>
           </div>
         </div>
 
         <!-- Availability -->
-        <p class="text-xs italic text-charcoal-light/60 flex items-center gap-2 pt-1">
-          <span class="inline-block w-2 h-2 bg-terracotta rotate-45 flex-shrink-0"></span>
+        <p class="text-sm italic text-muted flex items-center gap-2 pt-1">
+          <span class="inline-block w-2 h-2 bg-primary rotate-45 flex-shrink-0"></span>
           Currently available for freelance work &amp; collaboration.
         </p>
 
       </div>
     </div>
 
-    <!-- Bottom pixel separator -->
+    <!-- Bottom decorative separator (subtle) -->
     <div class="flex justify-center items-center gap-2 mt-16">
-      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta rotate-45"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
+      <span class="inline-block w-5 h-px bg-border"></span>
+      <span class="inline-block w-1.5 h-1.5 bg-primary rotate-45"></span>
+      <span class="inline-block w-5 h-px bg-border"></span>
     </div>
 
   </div>

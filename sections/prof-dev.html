@@ -1,35 +1,37 @@
-<hr class="w-24 h-1 bg-charcoal/40 border-0 rounded mx-auto">
-<section class="w-full px-6 py-16 md:py-24 bg-parchment/20" id="prof-dev">
+<section id="prof-dev" class="w-full px-6 py-16 md:py-24 bg-background">
   <div class="max-w-3xl mx-auto">
 
     <!-- Section header -->
     <div class="text-center mb-12 md:mb-16">
-      <h2 class="font-['PT_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-b-2 border-terracotta pb-2">
+      <h2
+        class="font-serif text-3xl md:text-4xl font-semibold text-foreground tracking-tight inline-block border-b-2 border-primary pb-2">
         Professional Development
       </h2>
     </div>
 
     <!-- Changelog window -->
-    <div class="border border-parchment-deep rounded-md overflow-hidden" id="pd-changelog">
+    <div class="rounded-xl overflow-hidden border border-border shadow-sm" id="pd-changelog">
 
       <!-- Title bar -->
-      <div class="flex items-center bg-parchment-deep border-b border-terracotta/20">
-        <div class="flex items-center gap-[5px] px-3 py-[10px] border-r border-terracotta/15">
-          <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-85 block"></span>
-          <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-50 block"></span>
-          <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-25 block"></span>
+      <div class="flex items-center bg-surface border-b border-border">
+        <div class="flex items-center gap-1.5 px-3 py-[10px] border-r border-border">
+          <span class="w-[10px] h-[10px] rounded-full bg-[#FF5F57] block"></span>
+          <span class="w-[10px] h-[10px] rounded-full bg-[#FFBD2E] block"></span>
+          <span class="w-[10px] h-[10px] rounded-full bg-[#28C840] block"></span>
         </div>
-        <span class="font-['DM_Mono'] text-xs font-medium text-charcoal/70 px-4 tracking-wide">
-          CHANGELOG.md
-        </span>
+        <div class="flex items-stretch h-full">
+          <div
+            class="font-mono text-xs font-medium text-foreground px-4 py-[10px] border-r border-border border-b-2 border-b-primary bg-background -mb-px">
+            CHANGELOG.md
+          </div>
+        </div>
       </div>
 
       <!-- Body -->
-      <div class="bg-parchment-dark px-8 py-7">
+      <div class="bg-background px-8 py-7">
 
         <!-- File comment header -->
-        <div
-          class="font-['DM_Mono'] text-[12px] text-charcoal-light/40 leading-[1.7] mb-6 pb-5 border-b border-dashed border-terracotta/20"
+        <div class="font-mono text-xs text-foreground leading-relaxed mb-6 pb-5 border-b border-dashed border-border"
           id="pd-comment">
           <span class="block"># CHANGELOG</span>
           <span class="block"># All notable professional development activities are documented here.</span>
@@ -39,78 +41,75 @@
         <!-- Entry 1 -->
         <div class="mb-6" id="pd-entry-1">
           <div class="flex items-baseline gap-3 mb-2">
-            <span class="font-['DM_Mono'] text-[14px] font-medium text-terracotta">## [2025.08]</span>
-            <span class="font-['DM_Mono'] text-[11px] text-charcoal-light/50">August 23, 2025</span>
+            <span class="font-mono text-sm font-medium text-primary">## [2025.08]</span>
+            <span class="font-mono text-[11px] text-muted/50">August 23, 2025</span>
             <span
-              class="font-['DM_Mono'] text-[10px] text-terracotta border border-terracotta/30 rounded-sm px-1.5 py-px uppercase tracking-wider ml-auto">workshop</span>
+              class="font-mono text-[10px] text-primary bg-primary/[0.07] border border-primary/20 rounded px-1.5 py-px uppercase tracking-wider ml-auto">workshop</span>
           </div>
-          <div class="h-px bg-gradient-to-r from-terracotta/30 to-transparent mb-3"></div>
+          <div class="h-px bg-gradient-to-r from-primary/20 to-transparent mb-3"></div>
           <div class="flex items-start gap-2.5 pl-1">
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta/55 rotate-45 flex-shrink-0 mt-[6px]"></span>
-            <p class="font-['DM_Mono'] text-[13px] text-charcoal-light font-light leading-[1.75]">
-              <span class="text-charcoal font-medium">AI.DEAS for Impact Participant</span> — collaborated on innovative
-              projects exploring practical applications of AI to solve real‑world problems.
+            <span class="inline-block w-1 h-1 rounded-full bg-primary/50 flex-shrink-0 mt-[7px]"></span>
+            <p class="font-mono text-sm text-muted font-light leading-relaxed">
+              <span class="text-foreground font-medium">AI.DEAS for Impact Participant</span> — collaborated on
+              innovative projects exploring practical applications of AI to solve real‑world problems.
             </p>
           </div>
         </div>
 
-        <hr class="border-none border-t border-dashed border-terracotta/15 my-6">
+        <hr class="border-none border-t border-dashed border-border my-6">
 
         <!-- Entry 2 -->
         <div class="mb-6" id="pd-entry-2">
           <div class="flex items-baseline gap-3 mb-2">
-            <span class="font-['DM_Mono'] text-[14px] font-medium text-terracotta">## [2024.10]</span>
-            <span class="font-['DM_Mono'] text-[11px] text-charcoal-light/50">October 30, 2024</span>
+            <span class="font-mono text-sm font-medium text-primary">## [2024.10]</span>
+            <span class="font-mono text-[11px] text-muted/50">October 30, 2024</span>
             <span
-              class="font-['DM_Mono'] text-[10px] text-terracotta border border-terracotta/30 rounded-sm px-1.5 py-px uppercase tracking-wider ml-auto">seminar</span>
+              class="font-mono text-[10px] text-primary bg-primary/[0.07] border border-primary/20 rounded px-1.5 py-px uppercase tracking-wider ml-auto">seminar</span>
           </div>
-          <div class="h-px bg-gradient-to-r from-terracotta/30 to-transparent mb-3"></div>
+          <div class="h-px bg-gradient-to-r from-primary/20 to-transparent mb-3"></div>
           <div class="flex items-start gap-2.5 pl-1">
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta/55 rotate-45 flex-shrink-0 mt-[6px]"></span>
-            <p class="font-['DM_Mono'] text-[13px] text-charcoal-light font-light leading-[1.75]">
-              <span class="text-charcoal font-medium">Victorias in Motion Tech Seminar</span> — participated in
+            <span class="inline-block w-1 h-1 rounded-full bg-primary/50 flex-shrink-0 mt-[7px]"></span>
+            <p class="font-mono text-sm text-muted font-light leading-relaxed">
+              <span class="text-foreground font-medium">Victorias in Motion Tech Seminar</span> — participated in
               expert‑led sessions on the rapid evolution of technology and modern software tools.
             </p>
           </div>
         </div>
 
-        <hr class="border-none border-t border-dashed border-terracotta/15 my-6">
+        <hr class="border-none border-t border-dashed border-border my-6">
 
         <!-- Entry 3 -->
         <div class="mb-2" id="pd-entry-3">
           <div class="flex items-baseline gap-3 mb-2">
-            <span class="font-['DM_Mono'] text-[14px] font-medium text-terracotta">## [2024.06]</span>
-            <span class="font-['DM_Mono'] text-[11px] text-charcoal-light/50">June 9, 2024</span>
+            <span class="font-mono text-sm font-medium text-primary">## [2024.06]</span>
+            <span class="font-mono text-[11px] text-muted/50">June 9, 2024</span>
             <span
-              class="font-['DM_Mono'] text-[10px] text-terracotta border border-terracotta/30 rounded-sm px-1.5 py-px uppercase tracking-wider ml-auto">certificate</span>
+              class="font-mono text-[10px] text-primary bg-primary/[0.07] border border-primary/20 rounded px-1.5 py-px uppercase tracking-wider ml-auto">certificate</span>
           </div>
-          <div class="h-px bg-gradient-to-r from-terracotta/30 to-transparent mb-3"></div>
+          <div class="h-px bg-gradient-to-r from-primary/20 to-transparent mb-3"></div>
           <div class="flex items-start gap-2.5 pl-1">
-            <span class="inline-block w-1.5 h-1.5 bg-terracotta/55 rotate-45 flex-shrink-0 mt-[6px]"></span>
-            <p class="font-['DM_Mono'] text-[13px] text-charcoal-light font-light leading-[1.75]">
-              <span class="text-charcoal font-medium">Data Entry and Office Productivity Certificate</span> — completed
-              comprehensive training in Microsoft Office programs, online research, and professional communication.
+            <span class="inline-block w-1 h-1 rounded-full bg-primary/50 flex-shrink-0 mt-[7px]"></span>
+            <p class="font-mono text-sm text-muted font-light leading-relaxed">
+              <span class="text-foreground font-medium">Data Entry and Office Productivity Certificate</span> —
+              completed comprehensive training in Microsoft Office programs, online research, and professional
+              communication.
             </p>
           </div>
         </div>
 
         <!-- EOF -->
-        <div
-          class="font-['DM_Mono'] text-[11px] text-charcoal-light/30 pt-5 mt-5 border-t border-dashed border-terracotta/15"
-          id="pd-eof">
+        <div class="font-mono text-[11px] text-foreground pt-5 mt-5 border-t border-dashed border-border" id="pd-eof">
           — End of CHANGELOG.md —
         </div>
 
       </div>
     </div>
 
-    <!-- Pixel separator -->
+    <!-- Bottom separator -->
     <div class="flex justify-center items-center gap-2 mt-16">
-      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta rotate-45"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
-      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
+      <div class="w-8 h-px bg-border"></div>
+      <div class="w-1.5 h-1.5 rounded-full bg-primary/50"></div>
+      <div class="w-8 h-px bg-border"></div>
     </div>
 
   </div>
