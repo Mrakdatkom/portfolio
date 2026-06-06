@@ -1,90 +1,95 @@
-<hr class="w-24 h-1 bg-charcoal/40 border-0 rounded mx-auto">
-<footer class="w-full bg-charcoal text-parchment mt-16" id="contact">
-  <div class="max-w-6xl mx-auto px-6 py-16 md:py-20">
+<footer class="w-full bg-charcoal text-parchment" id="contact">
 
-    <!-- Section header (light text) -->
-    <div class="text-center mb-12 md:mb-16">
-      <h2 class="font-['Pixelify_Sans'] text-3xl md:text-4xl inline-block border-b-2 border-terracotta-light pb-2">
-        Let's Connect
+  <!-- Top terracotta rule -->
+  <div class="w-full h-[3px]" style="background: linear-gradient(90deg, transparent 0%, #C0654A 20%, #C0654A 80%, transparent 100%);"></div>
+
+  <div class="max-w-5xl mx-auto px-6 py-14 md:py-16">
+
+    <!-- Name stamp row -->
+    <div class="flex items-end justify-between gap-4 pb-6 border-b border-white/[0.08] mb-10" id="contact-name-row">
+      <h2 class="font-['Pixelify_Sans'] text-5xl md:text-6xl text-parchment leading-none tracking-tight">
+        Mark<span class="text-terracotta">.</span>
       </h2>
-      <p class="font-['DM_Mono'] text-charcoal-light mt-4 max-w-xl mx-auto">
-        Have a project in mind? Feel free to reach out.
+      <p class="font-['DM_Mono'] text-[11px] text-parchment/35 uppercase tracking-widest text-right leading-relaxed flex-shrink-0">
+        Front-end Developer<br>Creative Coder
       </p>
     </div>
 
-    <!-- Two‑column layout -->
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 items-start">
+    <!-- Two-column body -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-12 mb-10">
 
-      <!-- Left: Contact info -->
-      <div class="space-y-6">
-        <div>
-          <h3 class="font-['Pixelify_Sans'] text-xl text-terracotta-light mb-3">Contact Info</h3>
-
-          <!-- Email -->
-          <div class="flex items-center gap-3 group">
-            <div class="w-2 h-2 bg-terracotta rotate-45 group-hover:scale-125 transition-transform"></div>
-            <a href="mailto:hello@example.com"
-              class="font-['DM_Mono'] text-sm hover:text-terracotta-light transition-colors break-all">
-              hello@example.com
-            </a>
-          </div>
-
-          <!-- Location (optional) -->
-          <div class="flex items-center gap-3 mt-3 group">
-            <div class="w-2 h-2 bg-terracotta rotate-45 group-hover:scale-125 transition-transform"></div>
-            <span class="font-['DM_Mono'] text-sm">Victorias City, Philippines</span>
-          </div>
+      <!-- Left: contact + social -->
+      <div id="contact-left">
+        <!-- Contact -->
+        <div class="flex items-center gap-2 mb-3">
+          <span class="font-['Pixelify_Sans'] text-[13px] text-terracotta-light tracking-wider">Contact</span>
+          <div class="flex-1 h-px bg-white/[0.07]"></div>
+        </div>
+        <div class="flex items-center gap-2.5 mb-2.5 group">
+          <span class="inline-block w-1.5 h-1.5 bg-terracotta rotate-45 opacity-70 flex-shrink-0"></span>
+          <a href="mailto:hello@example.com"
+            class="font-['DM_Mono'] text-[13px] text-parchment/65 font-light hover:text-terracotta-light transition-colors">
+            hello@example.com
+          </a>
+        </div>
+        <div class="flex items-center gap-2.5 group">
+          <span class="inline-block w-1.5 h-1.5 bg-terracotta rotate-45 opacity-70 flex-shrink-0"></span>
+          <span class="font-['DM_Mono'] text-[13px] text-parchment/65 font-light">
+            Victorias City, Philippines
+          </span>
         </div>
 
-        <!-- Social Links -->
-        <div>
-          <h3 class="font-['Pixelify_Sans'] text-xl text-terracotta-light mb-3">Social</h3>
-          <div class="flex flex-wrap gap-4">
-            <a href="#"
-              class="font-['DM_Mono'] text-sm border border-charcoal-light/30 rounded px-3 py-1 hover:bg-terracotta hover:text-parchment transition-all">
-              GitHub
-            </a>
-            <a href="#"
-              class="font-['DM_Mono'] text-sm border border-charcoal-light/30 rounded px-3 py-1 hover:bg-terracotta hover:text-parchment transition-all">
-              LinkedIn
-            </a>
-            <a href="#"
-              class="font-['DM_Mono'] text-sm border border-charcoal-light/30 rounded px-3 py-1 hover:bg-terracotta hover:text-parchment transition-all">
-              Twitter
-            </a>
-            <a href="#"
-              class="font-['DM_Mono'] text-sm border border-charcoal-light/30 rounded px-3 py-1 hover:bg-terracotta hover:text-parchment transition-all">
-              CodePen
-            </a>
-          </div>
+        <!-- Social -->
+        <div class="flex items-center gap-2 mt-6 mb-3">
+          <span class="font-['Pixelify_Sans'] text-[13px] text-terracotta-light tracking-wider">Social</span>
+          <div class="flex-1 h-px bg-white/[0.07]"></div>
+        </div>
+        <div class="flex flex-wrap gap-2">
+          <a href="#" class="font-['DM_Mono'] text-[12px] text-parchment/55 border border-white/10 rounded-sm px-3 py-1 tracking-wider hover:text-parchment hover:border-terracotta hover:bg-terracotta/12 transition-all">GitHub</a>
+          <a href="#" class="font-['DM_Mono'] text-[12px] text-parchment/55 border border-white/10 rounded-sm px-3 py-1 tracking-wider hover:text-parchment hover:border-terracotta hover:bg-terracotta/12 transition-all">LinkedIn</a>
+          <a href="#" class="font-['DM_Mono'] text-[12px] text-parchment/55 border border-white/10 rounded-sm px-3 py-1 tracking-wider hover:text-parchment hover:border-terracotta hover:bg-terracotta/12 transition-all">Twitter</a>
+          <a href="#" class="font-['DM_Mono'] text-[12px] text-parchment/55 border border-white/10 rounded-sm px-3 py-1 tracking-wider hover:text-parchment hover:border-terracotta hover:bg-terracotta/12 transition-all">CodePen</a>
         </div>
       </div>
 
-      <!-- Right: Short message / CTA (optional) -->
-      <div class="bg-charcoal-light/10 border border-charcoal-light/20 rounded-lg p-6 backdrop-blur-sm">
-        <p class="font-['DM_Mono'] text-sm leading-relaxed mb-4">
-          Open for freelance opportunities, collaborations, or just a friendly chat about tech and pixel art.
-        </p>
-        <div class="flex justify-end">
-          <div class="inline-block w-2 h-2 bg-terracotta rotate-45"></div>
-          <div class="inline-block w-2 h-2 bg-terracotta/60 rotate-45 ml-1"></div>
-          <div class="inline-block w-2 h-2 bg-terracotta/30 rotate-45 ml-1"></div>
+      <!-- Right: availability -->
+      <div id="contact-right">
+        <div class="flex items-center gap-2 mb-3">
+          <span class="font-['Pixelify_Sans'] text-[13px] text-terracotta-light tracking-wider">Availability</span>
+          <div class="flex-1 h-px bg-white/[0.07]"></div>
+        </div>
+        <div class="border-l-2 border-terracotta/30 pl-4">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="inline-block w-[7px] h-[7px] rounded-full bg-[#6fcf6f] flex-shrink-0"
+                  style="box-shadow: 0 0 6px rgba(111,207,111,0.6);"></span>
+            <span class="font-['DM_Mono'] text-[11px] text-[#6fcf6f] uppercase tracking-widest">Available for work</span>
+          </div>
+          <p class="font-['DM_Mono'] text-[13px] text-parchment/55 font-light leading-[1.75] mb-4">
+            Open for freelance opportunities, collaborations, or just a friendly chat about tech and pixel art.
+          </p>
+          <a href="mailto:hello@example.com"
+            class="inline-flex items-center gap-2 font-['DM_Mono'] text-[12px] text-terracotta-light border border-terracotta/35 rounded-sm px-4 py-2 tracking-wider hover:bg-terracotta/15 hover:border-terracotta-light hover:text-parchment transition-all">
+            Get in touch
+            <span class="opacity-70">→</span>
+          </a>
         </div>
       </div>
+
     </div>
 
-    <!-- Copyright line -->
-    <div class="text-center mt-16 pt-6 border-t border-charcoal-light/20">
-      <p class="font-['DM_Mono'] text-xs text-charcoal-light/70">
-        © 2026 Your Name. Built with Tailwind CSS & GSAP.
+    <!-- Bottom bar -->
+    <div class="flex items-center justify-between pt-5 border-t border-white/[0.07]" id="contact-bottom">
+      <p class="font-['DM_Mono'] text-[11px] text-parchment/25 tracking-wider">
+        © 2026 Mark Ryan. Built with Tailwind CSS &amp; GSAP.
       </p>
+      <div class="flex items-center gap-1.5">
+        <span class="inline-block w-[5px] h-[5px] bg-terracotta rotate-45 opacity-20 scale-65"></span>
+        <span class="inline-block w-[5px] h-[5px] bg-terracotta rotate-45 opacity-45 scale-80"></span>
+        <span class="inline-block w-[5px] h-[5px] bg-terracotta rotate-45"></span>
+        <span class="inline-block w-[5px] h-[5px] bg-terracotta rotate-45 opacity-45 scale-80"></span>
+        <span class="inline-block w-[5px] h-[5px] bg-terracotta rotate-45 opacity-20 scale-65"></span>
+      </div>
     </div>
 
-    <!-- Pixel separator (optional) -->
-    <div class="flex justify-center gap-2 mt-8">
-      <div class="w-1.5 h-1.5 bg-terracotta/40 rotate-45"></div>
-      <div class="w-1.5 h-1.5 bg-terracotta/60 rotate-45"></div>
-      <div class="w-1.5 h-1.5 bg-terracotta rotate-45"></div>
-    </div>
   </div>
 </footer>

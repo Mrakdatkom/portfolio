@@ -21,11 +21,6 @@ gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
 
 /* ── Section loader ───────────────────────────────────────────── */
-/**
- * Fetches an HTML snippet and injects it into a target element.
- * @param {string} snippetPath  - Path to the .html file
- * @param {string} targetId     - ID of the container to inject into
- */
 async function loadSection(snippetPath, targetId) {
   const target = document.getElementById(targetId);
   if (!target) {
@@ -54,19 +49,19 @@ async function init() {
     loadSection("sections/certifications.html", "section-certifications"),
     loadSection("sections/prof-dev.html", "section-prof-dev"),
     loadSection("sections/contact.html", "section-contact"),
-
-    // Future sections — uncomment and add as you build them:
-    // loadSection("sections/projects.html", "section-projects"),
-    // loadSection("sections/contact.html",  "section-contact"),
   ]);
 
+  // Teleport the cert modal to <body> so position:fixed isn't broken
+  // by GSAP transforms on any ancestor inside #smooth-content
+  const certModal = document.getElementById("cert-modal");
+  if (certModal) document.body.appendChild(certModal);
+
   // Initialize ScrollSmoother AFTER content is loaded
-  let smoother = ScrollSmoother.create({
+  ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
-    smooth: 2,          // 1 second catch-up time – adjust to taste
-    effects: true,      // enables data-speed and data-lag attributes
-    // normalizeScroll: true  // prevents mobile address bar weirdness
+    smooth: 2,
+    effects: true,
   });
 
   // Kick off animations now that DOM is ready

@@ -4,70 +4,98 @@
 
     <!-- Section header -->
     <div class="text-center mb-12 md:mb-16">
-      <h2
-        class="font-['Pixelify_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-b-2 border-terracotta pb-2">
+      <h2 class="font-['PT_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-b-2 border-terracotta pb-2">
         Work Experience
       </h2>
     </div>
 
-    <!-- Timeline-style card (pixel border & hover effect) -->
-    <div class="relative border-l-2 border-terracotta/30 pl-6 md:pl-8 ml-4 md:ml-8">
+    <!-- Timeline spine -->
+    <div class="relative border-l-2 border-terracotta/25 pl-8 md:pl-10 ml-4 md:ml-6" id="work-timeline">
 
-      <!-- Single job entry -->
-      <div class="mb-12 relative">
-        <!-- Pixel dot on timeline -->
-        <div class="absolute -left-[33px] md:-left-[41px] top-1 w-4 h-4 bg-terracotta rotate-45 shadow-md"></div>
+      <!-- Job entry -->
+      <div class="mb-12 relative" id="work-entry-1">
+        <!-- Timeline dot - fixed alignment -->
+        <!-- <div class="absolute -left-[40px] md:-left-[48px] top-[18px] w-4 h-4 bg-terracotta rotate-45"></div> -->
 
-        <!-- Card container -->
-        <div
-          class="bg-parchment-dark/50 backdrop-blur-sm rounded-lg p-6 md:p-8 border border-parchment-deep shadow-lg hover:shadow-xl transition-shadow duration-300">
-          <!-- Job title & period -->
-          <div class="flex flex-col sm:flex-row sm:justify-between sm:items-baseline gap-2 mb-4">
-            <h3 class="font-['Pixelify_Sans'] text-2xl text-terracotta">IT Intern - Warlen Industrial Sales Corporation
-            </h3>
-            <span
-              class="font-['DM_Mono'] text-sm text-charcoal-light/70 bg-parchment/50 px-3 py-1 rounded-full inline-block w-fit">
-              February – May 2026
-            </span>
+        <!-- Terminal window -->
+        <div class="rounded-md overflow-hidden border border-parchment-deep" id="work-card-1">
+
+          <!-- Title bar -->
+          <div class="flex items-center bg-parchment-deep border-b border-terracotta/20">
+            <!-- Pixel buttons -->
+            <div class="flex items-center gap-[5px] px-3 py-[10px] border-r border-terracotta/15">
+              <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-85 block"></span>
+              <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-50 block"></span>
+              <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-25 block"></span>
+            </div>
+            <!-- Title + badge -->
+            <div class="flex flex-1 items-center justify-between px-4 py-[10px] gap-3 min-w-0">
+              <span class="font-['DM_Mono'] text-[13px] font-medium text-charcoal truncate">
+                IT Intern — Warlen Industrial Sales Corporation
+              </span>
+              <span
+                class="font-['DM_Mono'] text-[11px] text-terracotta bg-terracotta/10 border border-terracotta/25 px-2.5 py-0.5 rounded-sm whitespace-nowrap flex-shrink-0">
+                Feb – May 2026
+              </span>
+            </div>
           </div>
 
-          <!-- Bullet points (each one with a pixel marker) -->
-          <ul class="space-y-4">
-            <li class="flex gap-3 text-charcoal-light leading-relaxed">
-              <span class="inline-block w-2 h-2 bg-terracotta rotate-45 mt-2 flex-shrink-0"></span>
-              <span class="font-['DM_Mono'] text-sm md:text-base">
-                Built a multi-tab attendance management system using Laravel and React that loads monthly data only when
-                clicked, reducing initial loading times and allowing the system to handle thousands of records smoothly.
-              </span>
-            </li>
-            <li class="flex gap-3 text-charcoal-light leading-relaxed">
-              <span class="inline-block w-2 h-2 bg-terracotta rotate-45 mt-2 flex-shrink-0"></span>
-              <span class="font-['DM_Mono'] text-sm md:text-base">
-                Developed reusable full-stack interface components, such as an inline employee selector and paginated
-                insight cards, replacing bulky pop-up menus that slowed down when handling over 100 records.
-              </span>
-            </li>
-            <li class="flex gap-3 text-charcoal-light leading-relaxed">
-              <span class="inline-block w-2 h-2 bg-terracotta rotate-45 mt-2 flex-shrink-0"></span>
-              <span class="font-['DM_Mono'] text-sm md:text-base">
-                Designed a consistent look and feel across more than 10 pages using a unified design system with precise
-                color choices, automated user avatars, and layouts that fit perfectly on both mobile and desktop
-                screens.
-              </span>
-            </li>
-          </ul>
+          <!-- Body -->
+          <div class="bg-parchment-dark px-6 py-5">
+            <!-- Prompt line -->
+            <div class="flex items-center gap-2 mb-4 pb-3 border-b border-dashed border-terracotta/20">
+              <span class="font-['DM_Mono'] text-xs text-terracotta/70 font-medium">~/work $</span>
+              <span class="font-['DM_Mono'] text-[13px] text-charcoal/80">cat responsibilities.log</span>
+              <span class="inline-block w-[7px] h-[13px] bg-terracotta/60 animate-pulse"></span>
+            </div>
+
+            <!-- Output lines -->
+            <ul class="flex flex-col gap-3" id="work-bullets-1">
+              <li class="flex gap-3 items-start">
+                <span
+                  class="font-['DM_Mono'] text-[12px] text-terracotta/55 flex-shrink-0 pt-px select-none">[01]</span>
+                <span class="font-['DM_Mono'] text-[13px] md:text-sm text-charcoal-light font-light leading-[1.75]">
+                  Built a <span class="text-terracotta font-medium">multi-tab attendance management system</span> using
+                  Laravel and React that loads monthly data only when clicked, reducing initial load times and allowing
+                  the system to handle thousands of records smoothly.
+                </span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span
+                  class="font-['DM_Mono'] text-[12px] text-terracotta/55 flex-shrink-0 pt-px select-none">[02]</span>
+                <span class="font-['DM_Mono'] text-[13px] md:text-sm text-charcoal-light font-light leading-[1.75]">
+                  Developed reusable <span class="text-terracotta font-medium">full-stack interface components</span> —
+                  an inline employee selector and paginated insight cards — replacing bulky pop-up menus that slowed
+                  down when handling over 100 records.
+                </span>
+              </li>
+              <li class="flex gap-3 items-start">
+                <span
+                  class="font-['DM_Mono'] text-[12px] text-terracotta/55 flex-shrink-0 pt-px select-none">[03]</span>
+                <span class="font-['DM_Mono'] text-[13px] md:text-sm text-charcoal-light font-light leading-[1.75]">
+                  Designed a <span class="text-terracotta font-medium">consistent design system</span> across 10+ pages
+                  with precise color choices, automated user avatars, and layouts that fit perfectly on both mobile and
+                  desktop screens.
+                </span>
+              </li>
+            </ul>
+          </div>
+
         </div>
       </div>
 
-      <!-- Optional decorative pixel line end -->
+      <!-- Timeline end dot -->
       <div class="absolute bottom-0 left-0 w-2 h-2 bg-terracotta/30 rotate-45 -translate-x-1/2"></div>
     </div>
 
-    <!-- Pixel separator (optional) -->
-    <div class="flex justify-center gap-2 mt-16">
-      <div class="w-2 h-2 bg-terracotta/40 rotate-45"></div>
-      <div class="w-2 h-2 bg-terracotta/60 rotate-45"></div>
-      <div class="w-2 h-2 bg-terracotta rotate-45"></div>
+    <!-- Pixel separator -->
+    <div class="flex justify-center items-center gap-2 mt-16">
+      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta rotate-45"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
     </div>
+
   </div>
 </section>

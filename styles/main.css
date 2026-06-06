@@ -30,6 +30,7 @@
 
   /* ─── Typography ────────────────────────────────────────────── */
   --font-pixel: "Pixelify Sans", sans-serif;
+  --font-pt-sans: "PT Sans", sans-serif;
   --font-body: 'DM Mono', monospace;
 
   /* ─── Spacing / Sizing ──────────────────────────────────────── */
@@ -45,6 +46,13 @@
 /* ─── Base Reset ─────────────────────────────────────────────── */
 html {
   scroll-behavior: smooth;
+}
+
+.figtree-light {
+  font-family: "Figtree", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 300;
+  font-style: normal;
 }
 
 body {

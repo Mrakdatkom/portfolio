@@ -1,90 +1,124 @@
 <hr class="w-24 h-1 bg-charcoal/40 border-0 rounded mx-auto">
 <section class="w-full px-6 py-16 md:py-24 bg-parchment/20" id="certifications">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-4xl mx-auto">
 
     <!-- Section header -->
     <div class="text-center mb-12 md:mb-16">
-      <h2
-        class="font-['Pixelify_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-b-2 border-terracotta pb-2">
+      <h2 class="font-['PT_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-b-2 border-terracotta pb-2">
         Certifications
       </h2>
     </div>
 
-    <!-- Centered two‑card grid using flex + responsive width -->
-    <div class="flex flex-wrap justify-center gap-6 md:gap-8">
+    <!-- Terminal window -->
+    <div class="border border-parchment-deep rounded-md overflow-hidden" id="cert-terminal">
 
-      <!-- Card 1 – Data Entry Certification -->
-      <div
-        class="cert-card w-full sm:w-80 bg-parchment-dark/40 backdrop-blur-sm rounded-lg border border-parchment-deep p-5 hover:shadow-xl transition-all duration-300 cursor-pointer group"
-        data-cert-img="images/certs/data-entry.png" data-cert-title="Data Entry Certification"
-        data-cert-issuer="Data Entry Course" data-cert-date="June 2024">
-
-        <!-- Thumbnail area -->
-        <div
-          class="w-full h-36 bg-parchment-deep/30 rounded-md mb-4 overflow-hidden border border-parchment-deep flex items-center justify-center">
-          <img src="images/certs/data-entry.png" alt="Data Entry cert thumbnail"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+      <!-- Title bar -->
+      <div class="flex items-center bg-parchment-deep border-b border-terracotta/20">
+        <div class="flex items-center gap-[5px] px-3 py-[10px] border-r border-terracotta/15">
+          <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-85 block"></span>
+          <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-50 block"></span>
+          <span class="w-[10px] h-[10px] bg-terracotta rotate-45 opacity-25 block"></span>
         </div>
-
-        <h3 class="font-['Pixelify_Sans'] text-lg text-terracotta mb-1">Data Entry Certification</h3>
-        <p class="font-['DM_Mono'] text-xs text-charcoal-light/80 mb-1">Data Entry Course</p>
-        <p class="font-['DM_Mono'] text-xs text-charcoal-light/60">June 2024</p>
-
-        <div
-          class="mt-4 inline-block text-xs font-['DM_Mono'] text-terracotta border border-terracotta/40 rounded px-3 py-1 hover:bg-terracotta hover:text-parchment transition-all">
-          View credential →
-        </div>
+        <span class="font-['DM_Mono'] text-xs font-medium text-charcoal/70 px-4 tracking-wide">
+          ~/certifications
+        </span>
       </div>
 
-      <!-- Card 2 – Publication Certification (or your second certificate) -->
-      <div
-        class="cert-card w-full sm:w-80 bg-parchment-dark/40 backdrop-blur-sm rounded-lg border border-parchment-deep p-5 hover:shadow-xl transition-all duration-300 cursor-pointer group"
-        data-cert-img="images/certs/publish.jpg" data-cert-title="Publication Certification"
-        data-cert-issuer="Research Study" data-cert-date="May 2026">
+      <!-- Body -->
+      <div class="bg-parchment-dark px-6 py-5">
 
-        <div
-          class="w-full h-36 bg-parchment-deep/30 rounded-md mb-4 overflow-hidden border border-parchment-deep flex items-center justify-center">
-          <img src="images/certs/publish.jpg" alt="Publication cert thumbnail"
-            class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+        <!-- Prompt -->
+        <div class="flex items-center gap-2 mb-4 pb-3 border-b border-dashed border-terracotta/20">
+          <span class="font-['DM_Mono'] text-xs text-terracotta/70 font-medium">~/certifications $</span>
+          <span class="font-['DM_Mono'] text-[13px] text-charcoal/80">ls -la *.cert</span>
+          <span class="inline-block w-[7px] h-[13px] bg-terracotta/60 animate-pulse"></span>
         </div>
 
-        <h3 class="font-['Pixelify_Sans'] text-lg text-terracotta mb-1">Publication Certification</h3>
-        <p class="font-['DM_Mono'] text-xs text-charcoal-light/80 mb-1">Research Study</p>
-        <p class="font-['DM_Mono'] text-xs text-charcoal-light/60">May 2026</p>
-
-        <div
-          class="mt-4 inline-block text-xs font-['DM_Mono'] text-terracotta border border-terracotta/40 rounded px-3 py-1 hover:bg-terracotta hover:text-parchment transition-all">
-          View credential →
+        <!-- Column headers -->
+        <div class="grid grid-cols-[110px_80px_1fr_80px] gap-x-3 px-2 pb-2 border-b border-terracotta/10 mb-1">
+          <span class="font-['DM_Mono'] text-[10px] uppercase tracking-widest text-charcoal-light/40">permissions</span>
+          <span class="font-['DM_Mono'] text-[10px] uppercase tracking-widest text-charcoal-light/40">date</span>
+          <span class="font-['DM_Mono'] text-[10px] uppercase tracking-widest text-charcoal-light/40">name</span>
+          <span></span>
         </div>
+
+        <!-- Row 1 -->
+        <div
+          class="cert-card group grid grid-cols-[110px_80px_1fr_80px] gap-x-3 items-center px-2 py-3 rounded-sm cursor-pointer hover:bg-terracotta/[0.06] border-b border-terracotta/[0.07] transition-colors duration-150"
+          data-cert-img="images/certs/data-entry.png" data-cert-title="Data Entry Certification"
+          data-cert-issuer="Data Entry Course" data-cert-date="June 2024" id="cert-row-1">
+          <span class="font-['DM_Mono'] text-[12px] text-charcoal-light/50 font-light tracking-wider">-rw-r--r--</span>
+          <span class="font-['DM_Mono'] text-[12px] text-charcoal-light/55 font-light">Jun 2024</span>
+          <div class="flex items-center gap-2">
+            <span class="text-terracotta/70 text-[11px]">◆</span>
+            <div>
+              <div class="font-['DM_Mono'] text-[13px] text-terracotta font-medium">data-entry.cert</div>
+              <div class="font-['DM_Mono'] text-[11px] text-charcoal-light/60 font-light mt-0.5">Data Entry Course</div>
+            </div>
+          </div>
+          <span
+            class="font-['DM_Mono'] text-[11px] text-terracotta border border-terracotta/30 rounded-sm px-2 py-0.5 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap">open
+            →</span>
+        </div>
+
+        <!-- Row 2 -->
+        <div
+          class="cert-card group grid grid-cols-[110px_80px_1fr_80px] gap-x-3 items-center px-2 py-3 rounded-sm cursor-pointer hover:bg-terracotta/[0.06] transition-colors duration-150"
+          data-cert-img="images/certs/publish.jpg" data-cert-title="Publication Certification"
+          data-cert-issuer="Research Study" data-cert-date="May 2026" id="cert-row-2">
+          <span class="font-['DM_Mono'] text-[12px] text-charcoal-light/50 font-light tracking-wider">-rw-r--r--</span>
+          <span class="font-['DM_Mono'] text-[12px] text-charcoal-light/55 font-light">May 2026</span>
+          <div class="flex items-center gap-2">
+            <span class="text-terracotta/70 text-[11px]">◆</span>
+            <div>
+              <div class="font-['DM_Mono'] text-[13px] text-terracotta font-medium">publication.cert</div>
+              <div class="font-['DM_Mono'] text-[11px] text-charcoal-light/60 font-light mt-0.5">Research Study</div>
+            </div>
+          </div>
+          <span
+            class="font-['DM_Mono'] text-[11px] text-terracotta border border-terracotta/30 rounded-sm px-2 py-0.5 text-center opacity-0 group-hover:opacity-100 transition-opacity duration-150 whitespace-nowrap">open
+            →</span>
+        </div>
+
+        <!-- Total line -->
+        <div
+          class="font-['DM_Mono'] text-[11px] text-charcoal-light/40 pt-3 mt-1 border-t border-dashed border-terracotta/15">
+          total 2 files &nbsp;·&nbsp; 2 certificates found
+        </div>
+
       </div>
     </div>
 
     <!-- Pixel separator -->
-    <div class="flex justify-center gap-2 mt-16">
-      <div class="w-2 h-2 bg-terracotta/40 rotate-45"></div>
-      <div class="w-2 h-2 bg-terracotta/60 rotate-45"></div>
-      <div class="w-2 h-2 bg-terracotta rotate-45"></div>
+    <div class="flex justify-center items-center gap-2 mt-16">
+      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta rotate-45"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
     </div>
-  </div>
 
-  <!-- Modal (unchanged) -->
-  <div id="cert-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4 pointer-events-none opacity-0">
-    <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="modal-overlay"></div>
-    <div
-      class="relative bg-parchment rounded-lg max-w-3xl w-full max-h-[90vh] overflow-auto shadow-2xl border-4 border-terracotta">
-      <button id="modal-close"
-        class="absolute top-2 right-2 w-8 h-8 bg-terracotta text-parchment rounded-md font-bold hover:bg-terracotta-light transition-colors z-10">
-        ✕
-      </button>
-      <div class="p-6 md:p-8">
-        <img id="modal-img" src="" alt="Certificate full view"
-          class="w-full h-auto border border-parchment-deep rounded shadow-md">
-        <div class="mt-4 text-center">
-          <h3 id="modal-title" class="font-['Pixelify_Sans'] text-2xl text-terracotta"></h3>
-          <p id="modal-issuer" class="font-['DM_Mono'] text-sm text-charcoal-light"></p>
-          <p id="modal-date" class="font-['DM_Mono'] text-xs text-charcoal-light/70 mt-1"></p>
-        </div>
+  </div>
+</section>
+
+<!-- Modal lives outside the section so GSAP transforms on the section
+     don't break position: fixed — it's teleported to <body> level -->
+<div id="cert-modal" class="fixed inset-0 z-50 flex items-center justify-center px-4 pointer-events-none opacity-0">
+  <div class="absolute inset-0 bg-black/70 backdrop-blur-sm" id="modal-overlay"></div>
+  <div
+    class="relative bg-parchment rounded-md max-w-2xl w-full max-h-[90vh] overflow-auto shadow-2xl border-[3px] border-terracotta z-10">
+    <button id="modal-close"
+      class="absolute top-2.5 right-2.5 w-7 h-7 bg-terracotta text-parchment rounded-sm font-bold text-sm hover:opacity-80 transition-opacity z-10 flex items-center justify-center">
+      ✕
+    </button>
+    <div class="p-6 md:p-8">
+      <img id="modal-img" src="" alt="Certificate full view"
+        class="w-full h-auto border border-parchment-deep rounded shadow-md">
+      <div class="mt-5 text-center">
+        <h3 id="modal-title" class="font-['Pixelify_Sans'] text-2xl text-terracotta"></h3>
+        <p id="modal-issuer" class="font-['DM_Mono'] text-sm text-charcoal-light mt-1"></p>
+        <p id="modal-date" class="font-['DM_Mono'] text-xs text-charcoal-light/60 mt-1"></p>
       </div>
     </div>
   </div>
-</section>
+</div>

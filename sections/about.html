@@ -1,80 +1,162 @@
 <hr class="w-24 h-1 bg-charcoal/40 border-0 rounded mx-auto">
 <section class="w-full px-6 py-16 md:py-24 bg-parchment/30" id="about">
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-5xl mx-auto">
+
     <!-- Section header -->
-    <div class="text-center mb-12 md:mb-16">
-      <h2
-        class="font-['Pixelify_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-b-2 border-terracotta pb-2">
+    <div class="text-center mb-14">
+      <h2 class="font-['PT_Sans'] text-3xl md:text-4xl text-charcoal inline-block border-terracotta pb-2">
         About Me
       </h2>
     </div>
 
-    <!-- Two-column layout: image + text -->
-    <div class="flex flex-col md:flex-row gap-10 md:gap-12 items-center">
-      <!-- Left: Pixel-style portrait / placeholder -->
+    <!-- Two-column layout -->
+    <div class="flex flex-col md:flex-row gap-12 items-center">
+
+      <!-- Left: Decorative panel -->
       <div class="w-full md:w-2/5 lg:w-1/3 flex justify-center">
-        <div
-          class="relative w-64 h-64 md:w-72 md:h-72 border-4 border-terracotta rounded-lg overflow-hidden bg-parchment-dark shadow-xl">
-          <!-- Replace with your actual image -->
-          <img src="images/hero-image.png" alt="Developer portrait"
-            class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500">
-          <!-- Decorative pixel corners -->
-          <div class="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-terracotta"></div>
-          <div class="absolute top-0 right-0 w-4 h-4 border-t-2 border-r-2 border-terracotta"></div>
-          <div class="absolute bottom-0 left-0 w-4 h-4 border-b-2 border-l-2 border-terracotta"></div>
-          <div class="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-terracotta"></div>
+        <div class="relative w-64 h-72" id="about-deco">
+          <!-- Outer dashed frame -->
+          <div class="absolute inset-0 border border-dashed border-terracotta/50 rounded-sm"></div>
+          <!-- Inner frame -->
+          <div class="absolute inset-[10px] border border-terracotta/20 rounded-sm"></div>
+          <!-- Corner accents -->
+          <div class="absolute top-0 left-0 w-3 h-3 border-t-2 border-l-2 border-terracotta"></div>
+          <div class="absolute top-0 right-0 w-3 h-3 border-t-2 border-r-2 border-terracotta"></div>
+          <div class="absolute bottom-0 left-0 w-3 h-3 border-b-2 border-l-2 border-terracotta"></div>
+          <div class="absolute bottom-0 right-0 w-3 h-3 border-b-2 border-r-2 border-terracotta"></div>
+          <!-- SVG art -->
+          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 256 288" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="dotgrid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+                <circle cx="8" cy="8" r="1" fill="#C0654A" opacity="0.18" />
+              </pattern>
+            </defs>
+            <rect x="16" y="16" width="224" height="256" fill="url(#dotgrid)" />
+            <!-- Scan lines -->
+            <line x1="16" y1="48" x2="240" y2="48" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
+            <line x1="16" y1="80" x2="240" y2="80" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
+            <line x1="16" y1="112" x2="240" y2="112" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
+            <line x1="16" y1="144" x2="240" y2="144" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
+            <line x1="16" y1="176" x2="240" y2="176" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
+            <line x1="16" y1="208" x2="240" y2="208" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
+            <line x1="16" y1="240" x2="240" y2="240" stroke="#C0654A" stroke-width="0.5" opacity="0.12" />
+            <!-- Outer orbit ring -->
+            <rect x="84" y="84" width="88" height="88" rx="2" fill="none" stroke="#C0654A" stroke-width="0.75"
+              opacity="0.2" transform="rotate(45 128 128)" />
+            <!-- Main diamond -->
+            <rect x="102" y="102" width="52" height="52" rx="2" fill="none" stroke="#C0654A" stroke-width="1.5"
+              opacity="0.55" transform="rotate(45 128 128)" />
+            <!-- Diamond fill -->
+            <rect x="114" y="114" width="28" height="28" fill="#C0654A" opacity="0.12" transform="rotate(45 128 128)" />
+            <!-- Center dot -->
+            <rect x="124" y="124" width="8" height="8" fill="#C0654A" opacity="0.65" transform="rotate(45 128 128)" />
+            <!-- Orbit dots -->
+            <circle cx="128" cy="84" r="2.5" fill="#C0654A" opacity="0.45" />
+            <circle cx="128" cy="172" r="2.5" fill="#C0654A" opacity="0.45" />
+            <circle cx="84" cy="128" r="2.5" fill="#C0654A" opacity="0.45" />
+            <circle cx="172" cy="128" r="2.5" fill="#C0654A" opacity="0.45" />
+            <!-- Corner diamonds -->
+            <rect x="40" y="40" width="9" height="9" fill="#C0654A" opacity="0.3" transform="rotate(45 44.5 44.5)" />
+            <rect x="207" y="40" width="9" height="9" fill="#C0654A" opacity="0.3" transform="rotate(45 211.5 44.5)" />
+            <rect x="40" y="239" width="9" height="9" fill="#C0654A" opacity="0.3" transform="rotate(45 44.5 243.5)" />
+            <rect x="207" y="239" width="9" height="9" fill="#C0654A" opacity="0.3"
+              transform="rotate(45 211.5 243.5)" />
+            <!-- Mid-axis small squares -->
+            <rect x="54" y="126" width="5" height="5" fill="#C0654A" opacity="0.22" />
+            <rect x="197" y="126" width="5" height="5" fill="#C0654A" opacity="0.22" />
+            <rect x="126" y="54" width="5" height="5" fill="#C0654A" opacity="0.22" />
+            <rect x="126" y="197" width="5" height="5" fill="#C0654A" opacity="0.22" />
+          </svg>
+          <!-- Placeholder label -->
+          <span
+            class="absolute bottom-5 left-0 right-0 text-center font-['Pixelify_Sans'] text-[10px] tracking-widest text-terracotta/40 uppercase">
+            [ portrait ]
+          </span>
         </div>
       </div>
 
-      <!-- Right: Bio text + personal details -->
-      <div class="w-full md:w-3/5 lg:w-2/3 space-y-6">
+      <!-- Right: Bio + stats -->
+      <div class="w-full md:w-3/5 lg:w-2/3 flex flex-col gap-6">
+
+        <!-- Bio text -->
         <div class="space-y-4">
-          <p class="font-['DM_Mono'] text-charcoal-light leading-relaxed">
-            I'm a <span class="text-terracotta font-bold">front-end developer & creative coder</span> with a passion for
-            pixel‑perfect design and buttery smooth animations. I believe that great code and great art are not mutually
-            exclusive.
+          <p class="figtree-light text-charcoal-light leading-relaxed">
+            I'm a <span class="text-terracotta font-semibold">front-end developer &amp; creative coder</span>
+            with a passion for pixel&#8209;perfect design and buttery smooth animations. I believe
+            great code and great art are not mutually exclusive.
           </p>
-          <p class="font-['DM_Mono'] text-charcoal-light leading-relaxed">
-            With over 4 years of experience, I’ve worked with startups and agencies to bring digital products to life.
-            My toolkit includes modern JavaScript, GSAP, Tailwind CSS, and a love for retro aesthetics.
+          <!-- Pixel dot divider -->
+          <div class="flex items-center gap-1.5">
+            <span class="inline-block w-1.5 h-1.5 bg-terracotta/30 rotate-45"></span>
+            <span class="inline-block w-1.5 h-1.5 bg-terracotta/60 rotate-45"></span>
+            <span class="inline-block w-1.5 h-1.5 bg-terracotta rotate-45"></span>
+            <span class="inline-block w-1.5 h-1.5 bg-terracotta/60 rotate-45"></span>
+            <span class="inline-block w-1.5 h-1.5 bg-terracotta/30 rotate-45"></span>
+          </div>
+          <p class="figtree-light text-charcoal-light leading-relaxed">
+            With over 4 years of experience, I've worked with startups and agencies to bring digital
+            products to life — my toolkit includes modern JavaScript, GSAP, Tailwind CSS, and a love
+            for retro aesthetics.
           </p>
         </div>
 
-        <!-- Quick facts / stats (inline grid) -->
-        <div class="grid grid-cols-2 gap-4 pt-4">
-          <div class="bg-parchment-dark p-4 rounded-lg text-center border border-parchment-deep">
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta" data-count="4">4+</div>
-            <div class="text-xs uppercase tracking-wider text-charcoal-light">Years Experience</div>
+        <!-- Stats grid -->
+        <div class="grid grid-cols-2 gap-3 pt-2">
+          <div
+            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
+            data-stat>
+            <div class="absolute inset-0 pointer-events-none"
+              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
+            </div>
+            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1" data-count="4">4+</div>
+            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Years Experience</div>
           </div>
-          <div class="bg-parchment-dark p-4 rounded-lg text-center border border-parchment-deep">
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta" data-count="25">25+</div>
-            <div class="text-xs uppercase tracking-wider text-charcoal-light">Projects Completed</div>
+          <div
+            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
+            data-stat>
+            <div class="absolute inset-0 pointer-events-none"
+              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
+            </div>
+            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1" data-count="25">25+</div>
+            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Projects Completed</div>
           </div>
-          <div class="bg-parchment-dark p-4 rounded-lg text-center border border-parchment-deep">
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta" data-count="12">12+</div>
-            <div class="text-xs uppercase tracking-wider text-charcoal-light">Technologies</div>
+          <div
+            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
+            data-stat>
+            <div class="absolute inset-0 pointer-events-none"
+              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
+            </div>
+            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1" data-count="12">12+</div>
+            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Technologies</div>
           </div>
-          <div class="bg-parchment-dark p-4 rounded-lg text-center border border-parchment-deep">
-            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta" data-count="∞">∞</div>
-            <div class="text-xs uppercase tracking-wider text-charcoal-light">Coffee Cups</div>
+          <div
+            class="bg-parchment-dark border-l-[3px] border-terracotta pl-4 pr-3 py-3 rounded-r-sm relative overflow-hidden"
+            data-stat>
+            <div class="absolute inset-0 pointer-events-none"
+              style="background-image: radial-gradient(circle, rgba(192,101,74,0.07) 1px, transparent 1px); background-size: 8px 8px;">
+            </div>
+            <div class="font-['Pixelify_Sans'] text-2xl text-terracotta leading-none mb-1">&#8734;</div>
+            <div class="text-[10px] uppercase tracking-widest text-charcoal-light font-medium">Coffee Cups</div>
           </div>
         </div>
 
-        <!-- Small CTA / fun fact -->
-        <div class="pt-2">
-          <p class="text-sm italic text-charcoal-light/70 flex items-center gap-2">
-            <span class="inline-block w-2 h-2 bg-terracotta rotate-45"></span>
-            Currently available for freelance work & collaboration.
-          </p>
-        </div>
+        <!-- Availability -->
+        <p class="text-xs italic text-charcoal-light/60 flex items-center gap-2 pt-1">
+          <span class="inline-block w-2 h-2 bg-terracotta rotate-45 flex-shrink-0"></span>
+          Currently available for freelance work &amp; collaboration.
+        </p>
+
       </div>
     </div>
 
-    <!-- Optional: a little pixel separator -->
-    <div class="flex justify-center gap-2 mt-16">
-      <div class="w-2 h-2 bg-terracotta/40 rotate-45"></div>
-      <div class="w-2 h-2 bg-terracotta/60 rotate-45"></div>
-      <div class="w-2 h-2 bg-terracotta rotate-45"></div>
+    <!-- Bottom pixel separator -->
+    <div class="flex justify-center items-center gap-2 mt-16">
+      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta rotate-45"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/50 rotate-45 scale-90"></span>
+      <span class="inline-block w-2 h-2 bg-terracotta/20 rotate-45 scale-75"></span>
     </div>
+
   </div>
 </section>

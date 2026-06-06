@@ -1,4 +1,3 @@
-// js/animations/work.js
 import gsap from "../../vendor/gsap/index.js";
 import { ScrollTrigger } from "../../vendor/gsap/ScrollTrigger.js";
 
@@ -8,61 +7,45 @@ export function initWorkAnimation() {
   const workSection = document.querySelector("#work");
   if (!workSection) return;
 
-  // Fade in section header
-  gsap.fromTo("#work h2",
-    { opacity: 0, y: 30 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: "#work",
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#work",
+      start: "top 78%",
+      toggleActions: "play none none reverse"
     }
+  });
+
+  // Header
+  tl.fromTo("#work h2",
+    { opacity: 0, y: 24 },
+    { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }
   );
 
-  // Animate the timeline card (slide from left + fade)
-  gsap.fromTo("#work .bg-parchment-dark",
-    { opacity: 0, x: -40 },
-    {
-      opacity: 1,
-      x: 0,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: "#work .bg-parchment-dark",
-        start: "top 75%",
-      }
-    }
+  // Timeline spine draw
+  tl.fromTo("#work-timeline",
+    { scaleY: 0, transformOrigin: "top center" },
+    { scaleY: 1, duration: 0.9, ease: "power2.out" },
+    "-=0.3"
   );
 
-  // Animate each bullet point with stagger
-  gsap.fromTo("#work ul li",
-    { opacity: 0, x: -20 },
-    {
-      opacity: 1,
-      x: 0,
-      duration: 0.5,
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: "#work ul",
-        start: "top 80%",
-      }
-    }
+  // Timeline dot pop
+  tl.fromTo("#work-entry-1 .rotate-45.bg-terracotta",
+    { opacity: 0, scale: 0 },
+    { opacity: 1, scale: 1, duration: 0.3, ease: "back.out(2)" },
+    "-=0.4"
   );
 
-  // Optional: timeline line draw effect (width grows)
-  gsap.fromTo("#work .border-l-2",
-    { scaleY: 0, transformOrigin: "top" },
-    {
-      scaleY: 1,
-      duration: 1,
-      scrollTrigger: {
-        trigger: "#work .border-l-2",
-        start: "top 80%",
-        toggleActions: "play none none reset"
-      }
-    }
+  // Card slide in
+  tl.fromTo("#work-card-1",
+    { opacity: 0, x: -32 },
+    { opacity: 1, x: 0, duration: 0.7, ease: "power3.out" },
+    "-=0.2"
+  );
+
+  // Bullet lines stagger
+  tl.fromTo("#work-bullets-1 li",
+    { opacity: 0, x: -14 },
+    { opacity: 1, x: 0, duration: 0.45, stagger: 0.12, ease: "power2.out" },
+    "-=0.3"
   );
 }

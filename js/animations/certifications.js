@@ -1,106 +1,83 @@
-// js/animations/certifications.js
 import gsap from "../../vendor/gsap/index.js";
 import { ScrollTrigger } from "../../vendor/gsap/ScrollTrigger.js";
 
 gsap.registerPlugin(ScrollTrigger);
 
 export function initCertificationsAnimation() {
-  const certSection = document.querySelector("#certifications");
-  if (!certSection) return;
+  const section = document.querySelector("#certifications");
+  if (!section) return;
 
-  // Animate section header
-  gsap.fromTo("#certifications h2",
-    { opacity: 0, y: 30 },
-    {
-      opacity: 1,
-      y: 0,
-      duration: 0.8,
-      scrollTrigger: {
-        trigger: "#certifications",
-        start: "top 80%",
-        toggleActions: "play none none reverse"
-      }
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: "#certifications",
+      start: "top 78%",
+      toggleActions: "play none none reverse"
     }
+  });
+
+  // Header
+  tl.fromTo("#certifications h2",
+    { opacity: 0, y: 24 },
+    { opacity: 1, y: 0, duration: 0.7, ease: "power2.out" }
   );
 
-  // Animate each certificate card with stagger
-  gsap.fromTo(".cert-card",
-    { opacity: 0, y: 40, scale: 0.95 },
-    {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      duration: 0.6,
-      stagger: 0.15,
-      scrollTrigger: {
-        trigger: "#certifications .grid",
-        start: "top 75%",
-      }
-    }
+  // Terminal card
+  tl.fromTo("#cert-terminal",
+    { opacity: 0, y: 24 },
+    { opacity: 1, y: 0, duration: 0.7, ease: "power3.out" },
+    "-=0.3"
   );
 
-  // --- Modal functionality ---
+  // File rows stagger
+  tl.fromTo("#cert-row-1, #cert-row-2",
+    { opacity: 0, x: -14 },
+    { opacity: 1, x: 0, duration: 0.4, stagger: 0.12, ease: "power2.out" },
+    "-=0.3"
+  );
+
+  // --- Modal ---
   const modal = document.getElementById("cert-modal");
   const modalImg = document.getElementById("modal-img");
   const modalTitle = document.getElementById("modal-title");
   const modalIssuer = document.getElementById("modal-issuer");
   const modalDate = document.getElementById("modal-date");
-  const closeBtn = document.getElementById("modal-close");
-  const overlay = document.getElementById("modal-overlay");
 
-  // Helper: open modal with GSAP animation
-  function openModal(certData) {
-    // Populate modal with data
-    modalImg.src = certData.img;
-    modalTitle.innerText = certData.title;
-    modalIssuer.innerText = certData.issuer;
-    modalDate.innerText = certData.date;
-
-    // Make modal interactive and visible
+  function openModal(data) {
+    modalImg.src = data.img;
+    modalTitle.innerText = data.title;
+    modalIssuer.innerText = data.issuer;
+    modalDate.innerText = data.date;
+    document.body.classList.add("overflow-hidden");
     gsap.set(modal, { pointerEvents: "auto" });
     gsap.fromTo(modal,
-      { opacity: 0, scale: 0.9 },
-      { opacity: 1, scale: 1, duration: 0.4, ease: "back.out(0.5)" }
+      { opacity: 0, scale: 0.94 },
+      { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(0.8)" }
     );
   }
 
   function closeModal() {
     gsap.to(modal, {
-      opacity: 0,
-      scale: 0.9,
-      duration: 0.3,
-      ease: "power2.in",
+      opacity: 0, scale: 0.94, duration: 0.25, ease: "power2.in",
       onComplete: () => {
         gsap.set(modal, { pointerEvents: "none" });
-        // Optionally clear image src to free memory
+        document.body.classList.remove("overflow-hidden");
         modalImg.src = "";
       }
     });
   }
 
-  // Attach click listeners to each card
-  document.querySelectorAll(".cert-card").forEach(card => {
-    card.addEventListener("click", (e) => {
-      // Prevent opening if clicked on the "View credential" button's inner span? It's fine.
-      e.stopPropagation();
-      const certData = {
-        img: card.getAttribute("data-cert-img"),
-        title: card.getAttribute("data-cert-title"),
-        issuer: card.getAttribute("data-cert-issuer"),
-        date: card.getAttribute("data-cert-date")
-      };
-      if (certData.img) openModal(certData);
-    });
+  document.querySelectorAll(".cert-card").forEach(row => {
+    row.addEventListener("click", () => openModal({
+      img: row.dataset.certImg,
+      title: row.dataset.certTitle,
+      issuer: row.dataset.certIssuer,
+      date: row.dataset.certDate,
+    }));
   });
 
-  // Close modal on close button or overlay click
-  if (closeBtn) closeBtn.addEventListener("click", closeModal);
-  if (overlay) overlay.addEventListener("click", closeModal);
-
-  // Close modal on ESC key
-  document.addEventListener("keydown", (e) => {
-    if (e.key === "Escape" && modal && modal.style.pointerEvents === "auto") {
-      closeModal();
-    }
+  document.getElementById("modal-close").addEventListener("click", closeModal);
+  document.getElementById("modal-overlay").addEventListener("click", closeModal);
+  document.addEventListener("keydown", e => {
+    if (e.key === "Escape" && modal.style.pointerEvents === "auto") closeModal();
   });
 }
