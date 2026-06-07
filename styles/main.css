@@ -71,3 +71,17 @@ a:hover {
   opacity: 0;
   visibility: hidden;
 }
+
+#smooth-wrapper {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#smooth-content {
+  overflow: visible;
+  width: 100%;
+}

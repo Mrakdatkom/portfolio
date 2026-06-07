@@ -62,6 +62,8 @@ async function init() {
     content: "#smooth-content",
     smooth: 2,
     effects: true,
+    touch: true,
+    smoothTouch: 0.5,
   });
 
   gsap.set("#cert-modal", { clearProps: "all" });
