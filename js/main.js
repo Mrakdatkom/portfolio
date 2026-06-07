@@ -73,6 +73,7 @@ async function init() {
     'certifications-link': 'section-certifications',
     'profdev-link': 'section-prof-dev',
     'contact-link': 'section-contact',
+    'hero-contact-btn': 'section-contact',
   };
 
   Object.entries(sectionMap).forEach(([buttonId, sectionId]) => {

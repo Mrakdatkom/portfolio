@@ -2,7 +2,7 @@
 
 import gsap from "../../vendor/gsap/index.js";
 
-// --- The original working horizontalLoop (with spacing control) ---
+// --- horizontalLoop (unchanged, works with any number of items) ---
 function horizontalLoop(items, config) {
   items = gsap.utils.toArray(items);
   config = config || {};
@@ -71,17 +71,52 @@ function horizontalLoop(items, config) {
   return tl;
 }
 
+// --- Clone items to create a seamless infinite loop ---
+function duplicateForSeamlessLoop(originalItems) {
+  const container = document.querySelector(".marquee-wrapper");
+  if (!container) return originalItems;
+
+  // Get the total width of the original set (including gaps)
+  let originalWidth = 0;
+  originalItems.forEach(item => {
+    originalWidth += item.offsetWidth;
+    const style = window.getComputedStyle(item);
+    const marginRight = parseFloat(style.marginRight) || 0;
+    originalWidth += marginRight;
+  });
+  // Also account for gap-x-6 (24px) between items – already included in marginRight? 
+  // Actually gap-x-6 adds margin-right to each item, so the above loop captures it.
+
+  // Get the viewport width of the scroll container
+  const scrollContainer = document.querySelector(".mask-fade-horizontal");
+  const viewportWidth = scrollContainer ? scrollContainer.clientWidth : window.innerWidth;
+
+  // How many times do we need to duplicate to fill at least 2x the viewport?
+  const neededCopies = Math.ceil((viewportWidth * 2) / originalWidth) + 1;
+
+  // Clone the original items and append them to the container
+  for (let i = 0; i < neededCopies; i++) {
+    originalItems.forEach(item => {
+      const clone = item.cloneNode(true);
+      // Remove any existing GSAP inline transforms (just to be safe)
+      gsap.set(clone, { clearProps: "transform" });
+      container.appendChild(clone);
+    });
+  }
+
+  // Return all .marquee-item elements (original + clones)
+  return gsap.utils.toArray(".marquee-item");
+}
+
 export function initSkillsMarquee() {
-  const marqueeItems = gsap.utils.toArray(".marquee-item");
-  if (!marqueeItems.length) {
+  const originalMarqueeItems = gsap.utils.toArray(".marquee-item");
+  if (!originalMarqueeItems.length) {
     console.warn("No .marquee-item elements found");
     return;
   }
 
-  // Get all images inside marquee items
-  const images = marqueeItems.map(item => item.querySelector('img')).filter(img => img);
-
-  // If there are images, wait for them to load
+  // Wait for images to load before measuring widths
+  const images = originalMarqueeItems.map(item => item.querySelector('img')).filter(img => img);
   if (images.length) {
     const loadPromises = images.map(img => {
       if (img.complete) return Promise.resolve();
@@ -89,17 +124,20 @@ export function initSkillsMarquee() {
     });
 
     Promise.all(loadPromises).then(() => {
-      startMarquee(marqueeItems);
+      // Clone items to fill the container seamlessly
+      const allItems = duplicateForSeamlessLoop(originalMarqueeItems);
+      startMarquee(allItems);
     });
   } else {
-    startMarquee(marqueeItems);
+    const allItems = duplicateForSeamlessLoop(originalMarqueeItems);
+    startMarquee(allItems);
   }
 }
 
 function startMarquee(marqueeItems) {
   const marqueeTimeline = horizontalLoop(marqueeItems, {
     repeat: -1,
-    paddingRight: 0,   // no extra spacing
+    paddingRight: 0,
     speed: 0.5,
   });
 
