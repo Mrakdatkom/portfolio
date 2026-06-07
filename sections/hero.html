@@ -1,36 +1,139 @@
-<section class="min-h-screen flex items-center justify-center px-6 py-20 md:py-24">
-  <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+<section id="hero" class="min-h-screen flex flex-col bg-[#0F1117] relative overflow-hidden">
 
-    <!-- Avatar column -->
-    <div id="hero-avatar-col" class="flex flex-col items-center gap-6 gsap-hidden">
-      <div class="w-64 h-64 md:w-72 md:h-72 rounded-xl overflow-hidden border-4 border-primary shadow-xl">
-        <img src="images/hero-image.png" alt="Mark Ryan" class="w-full h-full object-cover">
-      </div>
-      <span class="text-xs font-mono text-muted tracking-wider">// pixel.art.v1</span>
-    </div>
+  <!-- Background effects (dot grid, glows, vignette) – same as before -->
+  <div class="absolute inset-0 pointer-events-none"
+    style="background-image: radial-gradient(circle, rgba(255,255,255,0.08) 1px, transparent 1px); background-size: 24px 24px; @media (min-width: 768px) { background-size: 28px 28px; }">
+  </div>
+  <div class="absolute pointer-events-none hidden md:block"
+    style="top:50%; left:0; transform:translate(-30%,-50%); width:480px; height:480px; border-radius:50%; background:radial-gradient(circle, rgba(59,130,246,0.18) 0%, transparent 70%);">
+  </div>
+  <div class="absolute pointer-events-none hidden md:block"
+    style="top:20%; right:0; transform:translate(30%,0); width:320px; height:320px; border-radius:50%; background:radial-gradient(circle, rgba(99,102,241,0.1) 0%, transparent 70%);">
+  </div>
+  <div class="absolute inset-0 pointer-events-none"
+    style="background: radial-gradient(ellipse at center, transparent 40%, rgba(0,0,0,0.65) 100%); @media (min-width: 768px) { background: radial-gradient(ellipse at center, transparent 50%, rgba(0,0,0,0.55) 100%); }">
+  </div>
 
-    <!-- Info column -->
-    <div class="space-y-6 text-center md:text-left">
-      <div id="hero-greeting" class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary font-mono text-sm gsap-hidden">
-        <span class="w-2 h-2 rounded-full bg-primary"></span>
-        available for work
-      </div>
-
-      <h1 id="hero-name" class="font-serif text-5xl md:text-6xl font-semibold tracking-tight gsap-hidden">
-        Hello, I'm<br>
-        <span class="text-primary">Mark Ryan</span>
-      </h1>
-
-      <div id="hero-typewriter-wrapper" class="font-mono text-muted text-lg flex items-center justify-center md:justify-start gap-1 gsap-hidden">
-        <span>&gt;&nbsp;</span>
-        <span id="typewriter-output" class="text-foreground"></span>
-        <span id="typewriter-cursor" class="animate-pulse">_</span>
-      </div>
-
-      <div id="hero-cta" class="flex flex-wrap gap-4 justify-center md:justify-start pt-4 gsap-hidden">
-        <a href="#projects" class="bg-primary text-white px-6 py-2 rounded-md font-mono text-sm hover:bg-primary-dark transition">view projects ↓</a>
-        <a href="mailto:hello@yoursite.dev" class="px-6 py-2 border border-border rounded-md font-mono text-sm hover:border-primary hover:text-primary transition">say hello ✉</a>
-      </div>
+  <!-- Scroll hint (unchanged) -->
+  <div
+    class="absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1.5 z-10 pointer-events-none hidden sm:flex"
+    id="hero-scroll-hint">
+    <span class="font-mono text-[9px] sm:text-[10px] text-white/20 tracking-[0.12em] uppercase">scroll</span>
+    <div class="w-px h-4 sm:h-5 bg-white/10 relative overflow-hidden">
+      <div class="absolute top-0 left-0 w-full h-full bg-primary"
+        style="animation: scrollTravel 1.6s ease-in-out infinite; top: -100%;"></div>
     </div>
   </div>
+
+  <style>
+    @keyframes scrollTravel {
+      0% {
+        top: -100%;
+      }
+
+      100% {
+        top: 100%;
+      }
+    }
+
+    @keyframes pip {
+
+      0%,
+      100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5);
+      }
+
+      50% {
+        opacity: 0.8;
+        box-shadow: 0 0 0 5px rgba(59, 130, 246, 0);
+      }
+    }
+  </style>
+
+  <header class="relative z-20 w-full px-4 sm:px-8 md:px-12 lg:px-16 py-4 sm:py-5">
+    <div class="max-w-5xl mx-auto">
+      <nav class="flex justify-end gap-4 sm:gap-6 mt-2 sm:mt-4">
+        <button id="about-link"
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">About</button>
+        <button id="work-experience-link"
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Experience</button>
+        <button id="education-link"
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Education</button>
+        <button id="certifications-link"
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Certifications</button>
+        <button id="profdev-link"
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Professional-Development</button>
+        <button id="contact-link"
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Contact</button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main hero content (centered vertically, with header accounted for) -->
+  <div class="flex-1 flex items-center justify-center px-4 sm:px-8 md:px-12 lg:px-16 py-8 sm:py-12">
+    <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-8 sm:gap-12 lg:gap-14 items-center w-full relative z-10">
+
+      <!-- LEFT: info (unchanged, only font sizes increased) -->
+      <div class="flex flex-col gap-4 sm:gap-5 text-center md:text-left" id="hero-info">
+
+        <div id="hero-greeting"
+          class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/[0.10] border border-primary/25 font-mono text-xs sm:text-sm text-blue-400 tracking-widest w-fit mx-auto md:mx-0 gsap-hidden">
+          <span class="w-[7px] h-[7px] rounded-full bg-primary block"
+            style="animation: pip 2s ease-in-out infinite;"></span>
+          available for work
+        </div>
+
+        <h1 id="hero-name"
+          class="font-serif text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold text-white leading-[1.1] sm:leading-[1.08] tracking-tight gsap-hidden">
+          Hello, I'm<br>
+          <span class="text-primary">Mark Ryan</span>
+        </h1>
+
+        <div class="w-9 h-0.5 bg-primary/50 rounded-full mx-auto md:mx-0"></div>
+
+        <div id="hero-typewriter-wrapper"
+          class="font-mono text-lg sm:text-base md:text-lg text-gray-500 flex items-center justify-center md:justify-start gap-1.5 gsap-hidden">
+          <span class="text-primary/75">&gt;&nbsp;</span>
+          <span id="typewriter-output" class="text-gray-200"></span>
+          <span id="typewriter-cursor"
+            class="inline-block w-[7px] sm:w-[8px] h-[13px] sm:h-[16px] bg-primary/60 align-middle"></span>
+        </div>
+
+        <div id="hero-cta" class="flex flex-wrap gap-3 pt-1 justify-center md:justify-start gsap-hidden">
+          <a href="mailto:markryanzipagan3@gmail.com"
+            class="px-6 sm:px-7 py-2 sm:py-2.5 border border-white/10 rounded-md font-mono text-xs sm:text-sm text-gray-300 hover:border-primary hover:text-blue-400 transition tracking-wider">
+            Let's talk ✉
+          </a>
+        </div>
+
+      </div>
+
+      <!-- RIGHT: code rain panel (unchanged) -->
+      <div class="rounded-xl overflow-hidden border border-white/[0.07] bg-[#080B10] mt-6 md:mt-0" id="hero-code-panel"
+        style="box-shadow: 0 0 40px rgba(59,130,246,0.06), 0 24px 48px rgba(0,0,0,0.4);">
+
+        <div class="flex items-center bg-[#111318] border-b border-white/[0.06]">
+          <div class="flex items-center gap-1.5 px-3 py-[9px] border-r border-white/[0.06]">
+            <span class="w-[10px] h-[10px] rounded-full bg-[#FF5F57] block"></span>
+            <span class="w-[10px] h-[10px] rounded-full bg-[#FFBD2E] block"></span>
+            <span class="w-[10px] h-[10px] rounded-full bg-[#28C840] block"></span>
+          </div>
+          <span class="font-mono text-[11px] text-white/28 px-4 tracking-wider">output.log</span>
+          <span class="ml-auto mr-4 w-[6px] h-[6px] rounded-full bg-primary/70 block"
+            style="animation: pip 1.8s ease-in-out infinite;"></span>
+        </div>
+
+        <div class="h-[260px] sm:h-[300px] md:h-[340px] lg:h-[380px] overflow-hidden relative px-3 sm:px-4 py-3"
+          id="code-stream-wrap">
+          <div id="code-stream" class="flex flex-col gap-px"></div>
+          <div class="absolute bottom-0 left-0 right-0 h-16 sm:h-20 pointer-events-none"
+            style="background: linear-gradient(to bottom, transparent, #080B10);"></div>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
 </section>

@@ -9,61 +9,46 @@
       </h2>
     </div>
 
-    <!-- Two-column layout -->
-    <div class="flex flex-col md:flex-row gap-12 items-center">
+    <!-- Two-column layout (stretch heights on desktop) -->
+    <div class="flex flex-col md:flex-row gap-12 md:items-stretch">
 
-      <!-- Left: Decorative panel (kept for animation but restyled) -->
-      <div class="w-full md:w-2/5 lg:w-1/3 flex justify-center">
-        <div id="about-deco" class="relative w-64 h-72 bg-surface rounded-xl border border-border overflow-hidden">
-          <!-- Simple SVG art (replaces pixel graphics with subtle geometric pattern) -->
-          <svg class="absolute inset-0 w-full h-full" viewBox="0 0 256 288" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <pattern id="dotgrid" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
-                <circle cx="8" cy="8" r="1" fill="currentColor" opacity="0.08" />
-              </pattern>
-            </defs>
-            <rect x="16" y="16" width="224" height="256" fill="url(#dotgrid)" class="text-primary" />
-            <!-- Central diamond -->
-            <rect x="102" y="102" width="52" height="52" rx="2" fill="none" class="stroke-primary" stroke-width="1.2"
-              opacity="0.5" transform="rotate(45 128 128)" />
-            <rect x="114" y="114" width="28" height="28" fill="currentColor" class="text-primary" opacity="0.12"
-              transform="rotate(45 128 128)" />
-            <circle cx="128" cy="128" r="4" fill="currentColor" class="text-primary" opacity="0.8" />
-            <!-- Orbit rings -->
-            <rect x="84" y="84" width="88" height="88" rx="2" fill="none" class="stroke-primary" stroke-width="0.8"
-              opacity="0.2" transform="rotate(45 128 128)" />
-          </svg>
-          <span
-            class="absolute bottom-5 left-0 right-0 text-center font-mono text-[10px] tracking-wider text-muted uppercase">
-            — mark ryan —
-          </span>
+      <!-- Left: Decorative panel (full height of right column) -->
+      <div class="w-full md:w-2/5 lg:w-1/3 flex justify-center md:block">
+        <div id="about-deco"
+          class="relative w-full h-full md:h-auto rounded-xl overflow-hidden border border-border bg-surface">
+          <img src="images/about-image.jpg" alt="Mark Ryan" id="about-photo" class="w-full h-full object-cover">
         </div>
       </div>
 
-      <!-- Right: Bio + stats -->
+      <!-- Right: Bio + stats (this determines the height) -->
       <div class="w-full md:w-3/5 lg:w-2/3 flex flex-col gap-6">
 
-        <!-- Bio text -->
         <div class="space-y-4">
           <p class="font-mono text-foreground leading-relaxed">
-            I'm a <span class="text-primary font-semibold">front-end developer &amp; creative coder</span>
-            with a passion for clean, responsive design and buttery smooth animations. I believe
-            great code and great user experience are inseparable.
+            I'm a <span class="text-primary font-semibold">Full-Stack Web Developer &amp; IS Professional</span>
+            dedicated to building fast, reliable, and high-performing digital solutions. By combining robust
+            back-end architecture in <span class="text-primary font-semibold">PHP and Laravel</span> with modern,
+            interactive front-ends using <span class="text-primary font-semibold">React JS</span>, I bridge the gap
+            between complex logic and seamless user experience.
           </p>
-          <!-- Subtle divider -->
+
           <div class="flex items-center gap-2">
             <span class="inline-block w-4 h-px bg-border"></span>
             <span class="inline-block w-1.5 h-1.5 bg-primary rotate-45"></span>
             <span class="inline-block w-4 h-px bg-border"></span>
           </div>
+
           <p class="font-mono text-muted leading-relaxed">
-            With over 4 years of experience, I've worked with startups and agencies to bring digital
-            products to life — my toolkit includes modern JavaScript, GSAP, Tailwind CSS, Laravel, React,
-            and a love for elegant typography.
+            As a <span class="text-foreground">BS Information Systems</span> graduate, my expertise goes beyond just
+            writing code.
+            I leverage a strong foundation in business processes, software planning, and database management to ensure
+            every project is secure, scalable, and strategically aligned with business goals. Backed by solid knowledge
+            in networking infrastructure, I design well-structured systems fully optimized for both desktop and mobile
+            environments.
           </p>
         </div>
 
-        <!-- Stats grid (kept data-stat and data-count for counter animation) -->
+        <!-- Stats grid -->
         <div class="grid grid-cols-2 gap-4 pt-2">
           <div class="bg-surface border-l-4 border-primary pl-4 pr-3 py-3 rounded-md shadow-sm" data-stat>
             <div class="font-mono text-3xl font-semibold text-primary leading-none mb-1" data-count="4">4+</div>
@@ -92,7 +77,7 @@
       </div>
     </div>
 
-    <!-- Bottom decorative separator (subtle) -->
+    <!-- Bottom separator -->
     <div class="flex justify-center items-center gap-2 mt-16">
       <span class="inline-block w-5 h-px bg-border"></span>
       <span class="inline-block w-1.5 h-1.5 bg-primary rotate-45"></span>

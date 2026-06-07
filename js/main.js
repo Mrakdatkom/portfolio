@@ -57,7 +57,7 @@ async function init() {
   if (certModal) document.body.appendChild(certModal);
 
   // Initialize ScrollSmoother AFTER content is loaded
-  ScrollSmoother.create({
+  let smoother = ScrollSmoother.create({
     wrapper: "#smooth-wrapper",
     content: "#smooth-content",
     smooth: 2,
@@ -65,6 +65,25 @@ async function init() {
   });
 
   gsap.set("#cert-modal", { clearProps: "all" });
+  // In main.js, after smoother creation:
+  const sectionMap = {
+    'about-link': 'section-about',
+    'work-experience-link': 'section-work',
+    'education-link': 'section-education',
+    'certifications-link': 'section-certifications',
+    'profdev-link': 'section-prof-dev',
+    'contact-link': 'section-contact',
+  };
+
+  Object.entries(sectionMap).forEach(([buttonId, sectionId]) => {
+    const btn = document.getElementById(buttonId);
+    if (btn) {
+      btn.addEventListener('click', (e) => {
+        e.preventDefault();
+        smoother.scrollTo(`#${sectionId}`, true, 'center center');
+      });
+    }
+  });
 
   // Kick off animations now that DOM is ready
   animateHero();
