@@ -1,7 +1,7 @@
-<section id="certifications" class="w-full px-6 py-16 md:py-24 bg-background">
-  <div class="max-w-4xl mx-auto">
+<section id="certifications" class="w-full px-4 sm:px-6 py-12 sm:py-16 md:py-24 bg-background">
+  <div class="max-w-3xl mx-auto">
     <!-- Section header -->
-    <div class="text-center mb-12 md:mb-16">
+    <div class="text-center mb-10 md:mb-16">
       <h2
         class="font-serif text-3xl md:text-4xl font-semibold text-foreground tracking-tight inline-block border-b-2 border-primary pb-2">
         Certifications
@@ -10,15 +10,13 @@
 
     <!-- Terminal window -->
     <div id="cert-terminal" class="rounded-xl overflow-hidden border border-border shadow-sm">
-      <!-- Title bar -->
+      <!-- Title bar (unchanged, already responsive) -->
       <div class="flex items-center bg-surface border-b border-border">
-        <!-- macOS-style round buttons -->
         <div class="flex items-center gap-1.5 px-3 py-[10px] border-r border-border">
           <span class="w-[10px] h-[10px] rounded-full bg-[#FF5F57] block"></span>
           <span class="w-[10px] h-[10px] rounded-full bg-[#FFBD2E] block"></span>
           <span class="w-[10px] h-[10px] rounded-full bg-[#28C840] block"></span>
         </div>
-        <!-- Active tab -->
         <div class="flex items-stretch h-full">
           <div
             class="font-mono text-xs font-medium text-foreground px-4 py-[10px] border-r border-border border-b-2 border-b-primary bg-background -mb-px">
@@ -28,39 +26,38 @@
       </div>
 
       <!-- Body -->
-      <div class="bg-background px-6 py-5">
+      <div class="bg-background px-4 sm:px-6 py-4 sm:py-5">
         <!-- Prompt -->
-        <div class="flex items-center gap-2 mb-4 pb-3 border-b border-dashed border-border">
+        <div class="flex items-center gap-2 mb-4 pb-3 border-b border-dashed border-border flex-wrap">
           <span class="font-mono text-xs text-primary/80 font-medium">~/certifications $</span>
           <span class="font-mono text-sm text-foreground/75">ls -la *.cert</span>
           <span class="inline-block w-[7px] h-[13px] bg-primary/50 animate-pulse"></span>
         </div>
 
-        <!-- Row 1 -->
+        <!-- Row 1 (responsive grid) -->
         <div id="cert-row-1"
-          class="cert-card group relative grid grid-cols-[120px_minmax(200px,1fr)_auto] gap-x-4 items-center px-2 py-3 rounded-md cursor-pointer hover:bg-primary/[0.04] border-b border-border/60 transition-colors duration-150"
+          class="cert-card group relative grid grid-cols-1 sm:grid-cols-[100px_1fr_auto] lg:grid-cols-[120px_1fr_auto] gap-2 sm:gap-3 items-start sm:items-center px-2 py-3 rounded-md cursor-pointer hover:bg-primary/[0.04] border-b border-border/60 transition-colors duration-150"
           data-cert-img="images/certs/data-entry.png" data-cert-title="Data Entry Certification"
           data-cert-issuer="Data Entry Course" data-cert-date="June 2024">
-          <!-- Left accent bar -->
           <div
             class="absolute left-0 top-1.5 bottom-1.5 w-0.5 bg-primary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-150">
           </div>
           <!-- Date -->
-          <span class="font-mono text-sm font-semibold text-foreground/80">Jun 2024</span>
-          <!-- Name + issuer -->
-          <div>
-            <div class="font-mono text-sm text-primary font-medium">data-entry.cert</div>
+          <span class="font-mono text-sm font-semibold text-foreground/80 sm:col-span-1">Jun 2024</span>
+          <!-- Name + issuer (issuer line removed, but kept for structure) -->
+          <div class="sm:col-span-1">
+            <div class="font-mono text-sm text-primary font-medium break-words">data-entry.cert</div>
           </div>
-          <!-- Open button (right aligned) -->
+          <!-- Open button (responsive: full width on mobile, inline on desktop) -->
           <span
-            class="font-mono text-xs text-primary border border-primary/30 rounded-md px-3 py-1 text-center justify-self-end opacity-0 group-hover:opacity-100 transition-all duration-150 whitespace-nowrap hover:bg-primary/10">
+            class="font-mono text-xs text-primary border border-primary/30 rounded-md px-3 py-2 text-center justify-self-start sm:justify-self-end opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all duration-150 whitespace-nowrap hover:bg-primary/10">
             open →
           </span>
         </div>
 
         <!-- Row 2 -->
         <div id="cert-row-2"
-          class="cert-card group relative grid grid-cols-[120px_minmax(200px,1fr)_auto] gap-x-4 items-center px-2 py-3 rounded-md cursor-pointer hover:bg-primary/[0.04] transition-colors duration-150"
+          class="cert-card group relative grid grid-cols-1 sm:grid-cols-[100px_1fr_auto] lg:grid-cols-[120px_1fr_auto] gap-2 sm:gap-3 items-start sm:items-center px-2 py-3 rounded-md cursor-pointer hover:bg-primary/[0.04] transition-colors duration-150"
           data-cert-img="images/certs/publish.jpg" data-cert-title="Publication Certification"
           data-cert-issuer="Research Study" data-cert-date="May 2026">
           <div
@@ -68,10 +65,10 @@
           </div>
           <span class="font-mono text-sm font-semibold text-foreground/80">May 2026</span>
           <div>
-            <div class="font-mono text-sm text-primary font-medium">publication.cert</div>
+            <div class="font-mono text-sm text-primary font-medium break-words">publication.cert</div>
           </div>
           <span
-            class="font-mono text-xs text-primary border border-primary/30 rounded-md px-3 py-1 text-center justify-self-end opacity-0 group-hover:opacity-100 transition-all duration-150 whitespace-nowrap hover:bg-primary/10">
+            class="font-mono text-xs text-primary border border-primary/30 rounded-md px-3 py-2 text-center justify-self-start sm:justify-self-end opacity-100 sm:opacity-0 group-hover:opacity-100 transition-all duration-150 whitespace-nowrap hover:bg-primary/10">
             open →
           </span>
         </div>
@@ -84,7 +81,7 @@
     </div>
 
     <!-- Bottom separator -->
-    <div class="flex justify-center items-center gap-2 mt-16">
+    <div class="flex justify-center items-center gap-2 mt-12 md:mt-16">
       <div class="w-8 h-px bg-border"></div>
       <div class="w-1.5 h-1.5 rounded-full bg-primary/50"></div>
       <div class="w-8 h-px bg-border"></div>
@@ -92,13 +89,10 @@
   </div>
 </section>
 
-<!-- Modal – Blurred backdrop, no scrollbar -->
+<!-- Modal (unchanged, already responsive) -->
 <div id="cert-modal"
   class="fixed inset-0 z-50 flex items-center justify-center px-4 opacity-0 pointer-events-none transition-opacity duration-300">
-  <!-- Blurred overlay -->
   <div id="modal-overlay" class="absolute inset-0 bg-background/80 backdrop-blur-md"></div>
-
-  <!-- Modal content (sharp) -->
   <div
     class="relative z-10 bg-background border border-border rounded-xl max-w-2xl w-full max-h-[85vh] overflow-y-auto shadow-2xl">
     <div class="flex items-center justify-between px-5 py-3 border-b border-border bg-surface rounded-t-xl">
@@ -108,7 +102,6 @@
         ✕
       </button>
     </div>
-
     <div class="p-6 md:p-8">
       <img id="modal-img" src="" alt="Certificate full view"
         class="w-full h-auto border border-border rounded-lg shadow-sm">

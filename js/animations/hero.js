@@ -6,9 +6,11 @@ const ROLES = [
   "UI/UX Design & Styling",
   "Database Management",
   "System Analysis",
+  "Web Development",
   "AI & Emerging Tech",
   "Office Productivity",
-  "Professional Communication"
+  "Professional Communication",
+  "Networking",
 ];
 
 const STREAM_LINES = [

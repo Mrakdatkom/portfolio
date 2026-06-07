@@ -33,6 +33,19 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Hide scrollbar for Chrome, Safari, Edge, Opera, and all WebKit browsers */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox, IE, Edge Legacy */
+.no-scrollbar {
+  scrollbar-width: none;
+  /* Firefox */
+  -ms-overflow-style: none;
+  /* IE/Edge Legacy (works in old Edge) */
+}
+
 h1,
 h2,
 h3,

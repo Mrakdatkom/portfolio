@@ -65,7 +65,14 @@ async function init() {
   });
 
   gsap.set("#cert-modal", { clearProps: "all" });
-  // In main.js, after smoother creation:
+  const backToTopBtn = document.getElementById('back-to-top-btn');
+  if (backToTopBtn && smoother) {
+    backToTopBtn.addEventListener('click', (e) => {
+      e.preventDefault();
+      smoother.scrollTo('#hero', true, 'center center');
+    });
+  }
+
   const sectionMap = {
     'about-link': 'section-about',
     'work-experience-link': 'section-work',

@@ -51,21 +51,36 @@
     }
   </style>
 
+  <!-- Header stays inside card -->
   <header class="relative z-20 w-full px-4 sm:px-8 md:px-12 lg:px-16 py-4 sm:py-5">
     <div class="max-w-5xl mx-auto">
-      <nav class="flex justify-end gap-4 sm:gap-6 mt-2 sm:mt-4">
+      <!-- Responsive navigation: wrap on mobile, center or justify-end on larger screens -->
+      <nav class="flex flex-wrap justify-end sm:justify-end gap-3 sm:gap-4 md:gap-6 mt-2 sm:mt-4">
         <button id="about-link"
-          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">About</button>
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide whitespace-nowrap">
+          About
+        </button>
         <button id="work-experience-link"
-          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Experience</button>
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide whitespace-nowrap">
+          Experience
+        </button>
         <button id="education-link"
-          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Education</button>
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide whitespace-nowrap">
+          Education
+        </button>
         <button id="certifications-link"
-          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Certifications</button>
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide whitespace-nowrap">
+          Certifications
+        </button>
+        <!-- Special handling for long text on mobile -->
         <button id="profdev-link"
-          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Professional-Development</button>
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide break-words sm:whitespace-nowrap max-w-[120px] sm:max-w-none">
+          Professional-Development
+        </button>
         <button id="contact-link"
-          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide">Contact</button>
+          class="font-mono text-xs sm:text-sm text-gray-300 hover:text-primary transition tracking-wide whitespace-nowrap">
+          Contact
+        </button>
       </nav>
     </div>
   </header>
